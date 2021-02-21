@@ -101,7 +101,7 @@ div.fixed {
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   cursor: pointer;
 }
 
@@ -112,6 +112,6 @@ div.fixed {
 }
 
 .button1:hover {
-  background-color: #008CBA;
+  background-color: #BBFBFA;
   color: white;
 }
