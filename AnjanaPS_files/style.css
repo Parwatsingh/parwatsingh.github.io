@@ -90,3 +90,28 @@ div.fixed {
   right: 0;
   width: 300px;
 }
+
+
+
+.button {
+  background-color: white;
+  border-radius: 3px;
+  border: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 1px solid #008CBA;
+}
+
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+}
