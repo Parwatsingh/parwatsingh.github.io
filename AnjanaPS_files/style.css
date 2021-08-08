@@ -5,8 +5,8 @@ body {
   margin-top: auto ;
   margin-bottom: 20px ;
   padding: 5px ;
-  padding-left: 1px ;
-  padding-right: 1px ;
+  padding-left: 5px ;
+  padding-right: 10px ;
   border-radius: 9px ;
   /*min-width: 300px;
   max-width: 1200px;*/
@@ -152,12 +152,14 @@ div.fixed {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	padding-left: 0px ;
+	padding-right: 0px ;
 	overflow: hidden;
 	background-color: rgba(109, 117, 117);
 	z-index: 1000;
 	font-weight: 100;
 	text-transform: uppercase;
-	text-align: center;
+	text-align: left;
 	position: fixed; 
 	/*min-width: 300px;
 	max-width: 1200px;*/
