@@ -1,20 +1,20 @@
 body {
- 
   font-weight:400;
   margin-left: auto ;
   margin-right: auto ;
   margin-top: auto ;
   margin-bottom: 20px ;
-  padding: 10px ;
-  padding-left: 10px ;
-  padding-right: 10px ;
+  padding: 5px ;
+  padding-left: 20px ;
+  padding-right: 20px ;
   border-radius: 9px ;
-  min-width: 300px;
-  max-width: 900px;
+  /*min-width: 300px;
+  max-width: 1200px;*/
+  max-width:100%;
   font-size: 1.5em;
  /* currently ems cause chrome bug misinterpreting rems on body element */
   font-weight: 400;  
-  font-family: "Titillium Web", "Open sans", Helvetica, Arial, sans-serif;
+  font-family: "Open sans", Arial, Helvetica, sans-serif;/* Titillium Web, Open sans, Helvetica, sans-serif;*/
   color: #222;
 }
 
@@ -77,21 +77,21 @@ p {
   margin-top: 0; }
 
 a:link {
-    color: #2980B9;
+    color: #7C1E2F;
     text-decoration: none;
 }
 
 a:visited {
-    color: #2980B9;
+    color: #E4526D;
     text-decoration: none;
 }
 
 a:active {
-  color: #0FA0CE; 
+  color: #7C1E2F; 
 }
 
 a.myclass:hover {
-    color: #0FA0CE;
+    color: #953748;
 }
 
 td, th {
@@ -101,12 +101,12 @@ td, th {
 }
 
 .multi-column {
-   columns: 3;
-   column-count: 3;
+   columns: auto;
+   column-count: auto;
    column-gap: 20px;
-   -moz-column-count: 3;
+   -moz-column-count: auto;
    -moz-column-gap: 20px;
-   -webkit-column-count: 3;
+   -webkit-column-count: auto;
    -webkit-column-gap: 20px;   
    column-fill: auto;
    list-style-position: inside;
@@ -118,7 +118,7 @@ div.fixed {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 300px;
+  width: auto;
 }
 
 
@@ -138,11 +138,11 @@ div.fixed {
 .button1 {
   background-color: white; 
   color: black; 
-  border: 1px solid #008CBA;
+  border: 1px solid #7C1E2F;
 }
 
 .button1:hover {
-  background-color: #BBFBFA;
+  background-color: #F5B7C2;
   color: white;
 }
 
@@ -159,8 +159,8 @@ div.fixed {
 	text-transform: uppercase;
 	text-align: center;
 	position: fixed; 
-	min-width: 300px;
-	max-width: 900px;
+	/*min-width: 300px;
+	max-width: 1200px;*/
 	width: 100%;
 	top: 0;
 }
@@ -168,20 +168,20 @@ div.fixed {
 .topnav a {
   float: center;
   display: inline-block;
-  color: #CFFFFF;
+  color: #7C1E2F;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 10px;
   text-decoration: none;
   font-size: 15px;
 }
 
 .topnav a:hover {
-  background-color: #CCFAF9;
-  color: black;  
+  background-color: #7C1E2F;
+  color: white;  
 }
 
 .topnav a.active {
-  /background-color: #CCFAF9;
+  /background-color: #7C1E2F;
   color: black;
   float: center;
 }
@@ -189,6 +189,83 @@ div.fixed {
 .topnav .icon {
   display: none;
 }
+
+@media screen and (max-width: auto) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+
+
+
+
+
+
+/****************Pop Up******************/
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.cite {
+  width: 100%;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+
 
 /******
 .navbar.stick {
