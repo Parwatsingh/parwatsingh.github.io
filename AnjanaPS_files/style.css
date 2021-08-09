@@ -5,8 +5,8 @@ body {
   margin-top: auto ;
   margin-bottom: 20px ;
   padding: 5px ;
-  padding-left: 5px ;
-  padding-right: 10px ;
+  padding-left: 50px ;
+  padding-right: 50px ;
   border-radius: 9px ;
   /*min-width: 300px;
   max-width: 1200px;*/
@@ -151,15 +151,15 @@ div.fixed {
 .topnav {
 	list-style-type: none;
 	margin: 0;
+	margin-right: -50px;
+	margin-left: -50px;
 	padding: 0;
-	padding-left: 0px ;
-	padding-right: 0px ;
 	overflow: hidden;
-	background-color: rgba(109, 117, 117);
+	background-color: #ccc0c1;
 	z-index: 1000;
 	font-weight: 100;
 	text-transform: uppercase;
-	text-align: left;
+	text-align: center;
 	position: fixed; 
 	/*min-width: 300px;
 	max-width: 1200px;*/
