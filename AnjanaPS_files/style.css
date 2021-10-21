@@ -1,12 +1,12 @@
 body {
   font-weight:400;
   margin-left: auto ;
-  margin-right: auto ;
+  margin-right: 350 ;
   margin-top: auto ;
   margin-bottom: 20px ;
   padding: 5px ;
   padding-left: 15px ;
-  padding-right: 350px ;
+  padding-right: 15px ;
   border-radius: 9px ;
   /*min-width: 300px;
   max-width: 1200px;*/
