@@ -13,7 +13,7 @@ body {
   max-width:100%;
   font-size: 1.5em;
  /* currently ems cause chrome bug misinterpreting rems on body element */ 
-  font-family: "Open sans", Arial, Helvetica, sans-serif;/* Titillium Web, Open sans, Helvetica, sans-serif;*/
+  font-family: "Open sans", Arial; /*Helvetica, Courier New, monospace; sans-serif; Titillium Web, Open sans, Helvetica, sans-serif;*/
   color: #222;
 }
 
@@ -111,7 +111,11 @@ td, th {
    list-style-position: inside;
 }
 
-
+content{ 
+	display: none;
+	background-color: #f5f5f5;
+	font-family: Courier New, monospace;
+}
 
 div.fixed {
   position: fixed;
@@ -123,7 +127,7 @@ div.fixed {
 
 /****************button******************/
 .button {
-  background-color: white;
+  background-color: #65bdde;
   border-radius: 3px;
   border: 2px;
   text-align: center;
@@ -134,6 +138,25 @@ div.fixed {
   cursor: pointer;
 }
 
+.buttonnew{
+	background-color: #65bdde;
+	border: none;
+	color: white;
+	padding: 2px 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 2px 1px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.buttonnew:hover {
+  background-color: gray;
+  color: #065499;
+}
+
 .button1 {
   background-color: white; 
   color: black; 
@@ -141,7 +164,7 @@ div.fixed {
 }
 
 .button1:hover {
-  background-color: #CDD1D4;
+  background-color: white;
   color: #065499;
 }
 
@@ -158,22 +181,22 @@ div.fixed {
   margin: 0;
   padding: 0;
   z-index: 1000;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #065EAB;
+  color: black;/*#065EAB; */
   text-align: center;
-  padding: 20px 20px;
+  padding: 15px 20px;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 /* Add an active class to highlight the current page */
 .active {
-  background-color: #04AA6D;
+  background-color: black;
   color: white;
 }
 
