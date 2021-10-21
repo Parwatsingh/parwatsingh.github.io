@@ -1,7 +1,7 @@
 body {
   font-weight:400;
   margin-left: auto ;
-  margin-right: 350 ;
+  margin-right: 350px ;
   margin-top: auto ;
   margin-bottom: 20px ;
   padding: 5px ;
@@ -172,9 +172,9 @@ div.fixed {
   display: inline-block;
   color: #065EAB;
   text-align: center;
-  padding: 12px 12px;
+  padding: 10px 10px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 13px;
 }
 
 .topnav a:hover {
