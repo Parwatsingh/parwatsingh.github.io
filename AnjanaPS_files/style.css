@@ -5,8 +5,8 @@ body {
   margin-top: auto ;
   margin-bottom: 20px ;
   padding: 5px ;
-  padding-left: 50px ;
-  padding-right: 50px ;
+  padding-left: 15px ;
+  padding-right: 350px ;
   border-radius: 9px ;
   /*min-width: 300px;
   max-width: 1200px;*/
@@ -15,7 +15,7 @@ body {
  /* currently ems cause chrome bug misinterpreting rems on body element */
   font-weight: 400;  
   font-family: "Open sans", Arial, Helvetica, sans-serif;/* Titillium Web, Open sans, Helvetica, sans-serif;*/
-  color: #222;
+  /*color: #222;*/
 }
 
 /* Base Styles
@@ -77,21 +77,21 @@ p {
   margin-top: 0; }
 
 a:link {
-    color: #7C1E2F;
+    color: #0C21CD;
     text-decoration: none;
 }
 
 a:visited {
-    color: #E4526D;
+    color: #061BCC;
     text-decoration: none;
 }
 
 a:active {
-  color: #7C1E2F; 
+  color: #CC21CD; 
 }
 
 a.myclass:hover {
-    color: #953748;
+    color: #157E9D;
 }
 
 td, th {
@@ -126,24 +126,24 @@ div.fixed {
 .button {
   background-color: white;
   border-radius: 3px;
-  border: 3px;
+  border: 2px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   cursor: pointer;
 }
 
 .button1 {
   background-color: white; 
   color: black; 
-  border: 1px solid #7C1E2F;
+  border: 1px solid #1026DB;
 }
 
 .button1:hover {
-  background-color: #F5B7C2;
-  color: white;
+  background-color: #CDD1D4;
+  color: #065499;
 }
 
 
@@ -152,14 +152,14 @@ div.fixed {
 	list-style-type: none;
 	margin: 0;
 	margin-right: -50px;
-	margin-left: -50px;
+	margin-left: -15px;
 	padding: 0;
 	overflow: hidden;
-	background-color: #ccc0c1;
+	background-color: #D5DBDB;
 	z-index: 1000;
 	font-weight: 100;
 	text-transform: uppercase;
-	text-align: center;
+	text-align: left;
 	position: fixed; 
 	/*min-width: 300px;
 	max-width: 1200px;*/
@@ -170,15 +170,15 @@ div.fixed {
 .topnav a {
   float: center;
   display: inline-block;
-  color: #7C1E2F;
+  color: #065EAB;
   text-align: center;
-  padding: 10px 10px;
+  padding: 12px 12px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .topnav a:hover {
-  background-color: #7C1E2F;
+  background-color: #3EA0F6;
   color: white;  
 }
 
@@ -188,13 +188,13 @@ div.fixed {
   float: center;
 }
 
-.topnav .icon {
+/*.topnav .icon {
   display: none;
-}
+}*/
 
 @media screen and (max-width: auto) {
   .navbar a {
-    float: none;
+    float: left;
     display: block;
     width: 100%;
     text-align: left; /* If you want the text to be left-aligned on small screens */
