@@ -1,19 +1,18 @@
 body {
-  font-weight:400;
+  font-weight:500;
   margin-left: auto ;
-  margin-right: 350px ;
+  margin-right: auto ;
   margin-top: auto ;
   margin-bottom: 20px ;
   padding: 5px ;
   padding-left: 15px ;
-  padding-right: 15px ;
-  border-radius: 9px ;
+  padding-right: auto ;
+  border-radius: auto ;
   /*min-width: 300px;
   max-width: 1200px;*/
   max-width:100%;
-  font-size: 1.5em;
- /* currently ems cause chrome bug misinterpreting rems on body element */
-  font-weight: 400;  
+  font-size: 1.7em;
+ /* currently ems cause chrome bug misinterpreting rems on body element */ 
   font-family: "Open sans", Arial, Helvetica, sans-serif;/* Titillium Web, Open sans, Helvetica, sans-serif;*/
   /*color: #222;*/
 }
@@ -151,7 +150,7 @@ div.fixed {
 .topnav {
 	list-style-type: none;
 	margin: 0;
-	margin-right: -50px;
+	margin-right: -10px;
 	margin-left: -15px;
 	padding: 0;
 	overflow: hidden;
@@ -161,8 +160,7 @@ div.fixed {
 	text-transform: uppercase;
 	text-align: left;
 	position: fixed; 
-	/*min-width: 300px;
-	max-width: 1200px;*/
+	max-width: 100%;
 	width: 100%;
 	top: 0;
 }
@@ -174,7 +172,7 @@ div.fixed {
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 20px;
 }
 
 .topnav a:hover {
@@ -188,16 +186,13 @@ div.fixed {
   float: center;
 }
 
-/*.topnav .icon {
-  display: none;
-}*/
 
 @media screen and (max-width: auto) {
   .navbar a {
     float: left;
     display: block;
     width: 100%;
-    text-align: left; /* If you want the text to be left-aligned on small screens */
+    text-align: left; 
   }
 
 
