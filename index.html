@@ -146,6 +146,7 @@
 		<td>
 			<marquee  direction="up" align="auto" width="100%" height="200px" loop="" scrollamount="2">
 				<ul>
+					<li><!--img src="./AnjanaPS_files/cicon.png" style="width:1em" alt="Calender Icon"-->Nov 28, 2021:<i> DiPETrans: A Framework for Distributed Parallel Execution of Transactions of Blocks in Blockchain</i> accepted at <b>CCPE</b> 2021.</li><br>
 					<li><!--img src="./AnjanaPS_files/cicon.png" style="width:1em" alt="Calender Icon"-->Nov 20, 2021:<i> Efficient Parallel Execution of Block Transactions in Blockchain</i> accepted at <b>Middleware</b> 2021 Doctoral Symposium.</li><br>
 					<li><!--img src="./AnjanaPS_files/cicon.png" style="width:1em" alt="Calender Icon"-->Dec 01, 2020:<i> Efficient Concurrent Execution of Smart Contracts in Blockchains using Object-based Transactional Memory</i> accepted at <b>ARCS</b> 2021 for presentaion.</li><br>
 					<li><!--img src="./AnjanaPS_files/cicon.png" style="width:1em" alt="Calender Icon"-->Oct 13, 2020:<i> DeHiDe: Deep Learning-based Hybrid Model to Detect Fake News using Blockchain</i> accepted at <b>ICDCN</b> 2021.</li><br>
@@ -181,8 +182,58 @@
 
 	<!------Publications------>
 	<h4><a name="publications" marked="1">Publications</a></h4>
+		<!------Journal Publications------>
+		<h5>Journal Papers</h5>
+			<ul>
+				<li>
+					<div class="text-justify" id="DiPETransCCPE2021">
+						<span id="CCPEDiPETrans2021">Shrey Baheti, <font color="#664B50"><b>Anjana Parwat Singh</b></font>, Sathya Peri, and Yogesh Simmhan, <b>DiPETrans: A Framework for Distributed Parallel Execution of Transactions of Blocks in Blockchain</b>, <i>Concurrency and Computation: Practice and Experience (<b>CCPE</b>), Volume ?, No. ?, Pages: ??, ISSN: 1532-0634, Wiley Press, New York, USA, (in press, accepted on Nov. 28, 2021).</i></span>
+					</div>
+					
+					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Pdf</font></a></button-->
+					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">DOI</font></a></button-->
+					<button class="buttonnew" onclick="bibDiPETransCCPE2021()"><font color="white">Bibtex</font></button>
+					<button class="buttonnew" onclick="abstractDiPETransCCPE2021()"><font color="white">Abstract</font></button>
+					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Slides</font></a> </button-->
+					<button class="buttonnew"><a class="myclass" href="https://arxiv.org/abs/1906.11721" marked="1" target="_blank"><font color="white">Report</font></a> </button>
+					<button class="buttonnew"><a class="myclass" href="https://github.com/sbshrey/DiPETrans" marked="1" target="_blank"><font color="white">Code</font></a> </button>
+					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Poster</font></a> </button-->
+					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Video</font></a></button-->
+					
+					<div id="bibDiPETransCCPE2021-bib-file" class="content" style="display:none">
+						<pre>@article{Baheti2019DiPETrans,<br>author = {Shrey Baheti and Parwat Singh Anjana and Sathya Peri and Yogesh Simmhan},<br>title = {DiPETrans: A Framework for Distributed Parallel Execution of Transactions of Blocks in Blockchain},<br>journal = {CoRR},<br>volume = {abs/1906.11721},<br>year = {2019},<br>url = {http://arxiv.org/abs/1906.11721},<br>archivePrefix = {arXiv},<br>eprint = {1906.11721},<br>timestamp = {Mon, 01 Jul 2019 13:00:07 +0200},<br>biburl = {https://dblp.org/rec/journals/corr/abs-1906-11721.bib},<br>bibsource = {dblp computer science bibliography, https://dblp.org}<br>}
+						</pre>
+					</div>
+					<script>
+					function bibDiPETransCCPE2021(parameter) {
+						var x= document.getElementById('bibDiPETransCCPE2021-bib-file');
+						if (x.style.display === 'none') {
+							x.style.display = 'block';
+						} else {
+							x.style.display = 'none';
+						}
+					}
+					</script>
+
+					<div id="abstractDiPETransCCPE2021Full" class="content" style="display:none">
+						<p>Contemporary blockchain such as Bitcoin and Ethereum execute transactions serially by miners and validators and determine the Proof-of-Work (PoW). Such serial execution is unable to exploit modern multi-core resources efficiently, hence limiting the system throughput and increasing the transaction acceptance latency. The objective of this work is to increase the transaction throughput by introducing parallel transaction execution using a static analysis technique. We propose a framework DiPETrans for the distributed execution of the transactions in a block. Here, peers in the blockchain network form a community to execute the transactions and find the PoW parallelly, using a leader-follower approach. During mining, the leader statically analyzes the transactions, creates different groups (shards) of independent transactions, and distributes them to followers to execute them in parallel. After the transaction executes, the community's compute power is utilized to solve the PoW concurrently. When a block is successfully created, the leader broadcasts the proposed block to other peers in the network for validation. On receiving a block, validators re-execute the block transactions and accept the block if they reach the same state as shared by the miner. Validation can also be done as a community, in parallel, following the same leader-follower approach as mining. We report experiments using over 5 Million real transactions from the Ethereum blockchain and execute them using our DiPETrans framework to empirically validate the benefits of our techniques over traditional sequential execution. We achieve a maximum speedup of 2.2x for the miner and 2.0x for the validator, with 100 to 500 transactions per block. Further, we achieve a peak of 5x end-to-end block creation speedup using a parallel miner over a serial miner when using 6 machines in the community.
+						</p>
+					</div>
+					<script>
+						function abstractDiPETransCCPE2021(parameter) {
+							var x= document.getElementById('abstractDiPETransCCPE2021Full');
+							if (x.style.display === 'none') {
+								x.style.display = 'block';
+							} else {
+								x.style.display = 'none';
+							}
+						}
+					</script>
+				</li>
+			</ul>
+	
 		<!------Conference Publications------>
-		<h5>Conference</h5>
+		<h5>Conference Papers</h5>
 			<ul>
 				<li>
 					<div class="text-justify" id="ObjSCnetys2020">
@@ -591,7 +642,7 @@
 		<!------Under Review------>
 		<h5>Unpublished Manuscripts</h5>
 			<ul>
-				<li>
+				<!--li>
 					<div class="text-justify" id="DiPETransCCPE2021">
 						<span id="CCPEDiPETrans2021">Shrey Baheti, <font color="#664B50"><b>Anjana Parwat Singh</b></font>, Sathya Peri, and Yogesh Simmhan, <b>DiPETrans: A Framework for Distributed Parallel Execution of Transactions of Blocks in Blockchain</b>.</span>
 					</div>
@@ -635,7 +686,7 @@
 							}
 						}
 					</script>
-				</li>
+				</li-->
 				<!--li>
 					<b>DiPETrans: A Framework for Distributed Parallel Execution of Transactions of Blocks in Blockchain</b>
 					<br>
@@ -665,7 +716,7 @@
 					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Video</font></a></button-->
 					
 					<div id="bibOptSmartDAPD2021-bib-file" class="content" style="display:none">
-						<pre>@article{Anjana2021OptSmart,<br>author    = {Parwat Singh Anjana and Sweta Kumari and Sathya Peri and Sachin Rathor and Archit Somani},<br>title     = {OptSmart: A Space Efficient Optimistic Concurrent Execution of Smart Contracts},<br>journal   = {CoRR},<br>volume    = {abs/2102.04875},<br>year      = {2021},<br>url       = {https://arxiv.org/abs/2102.04875},<br>archivePrefix = {arXiv},<br>eprint    = {2102.04875},<br>timestamp = {Thu, 18 Feb 2021 15:26:00 +0100},<br>biburl    = {https://dblp.org/rec/journals/corr/abs-2102-04875.bib},<br>bibsource = {dblp computer science bibliography, https://dblp.org}<br>}
+						<pre>@article{Anjana2021OptSmart,<br>author  = {Parwat Singh Anjana and Sweta Kumari and Sathya Peri and Sachin Rathor and Archit Somani},<br>title     = {OptSmart: A Space Efficient Optimistic Concurrent Execution of Smart Contracts},<br>journal   = {CoRR},<br>volume    = {abs/2102.04875},<br>year      = {2021},<br>url       = {https://arxiv.org/abs/2102.04875},<br>archivePrefix = {arXiv},<br>eprint    = {2102.04875},<br>timestamp = {Thu, 18 Feb 2021 15:26:00 +0100},<br>biburl    = {https://dblp.org/rec/journals/corr/abs-2102-04875.bib},<br>bibsource = {dblp computer science bibliography, https://dblp.org}<br>}
 						</pre>
 					</div>
 					<script>
@@ -904,9 +955,8 @@
  </div>
 </main>
 <hr>
-| <font size="1">Last modified: 22:57, Thursday, October 21 2021, (IST) Time in India</font> | <font size = "1">Copyright ©2019, Anjana Parwat Singh</font> |
+| <font size="1">Last modified: 15:17, Sunday, December 05 2021, (IST) Time in India</font> | <font size = "1">Copyright ©2019, Anjana Parwat Singh</font> |
 <br>
-<!--font size="1">Last modified: 01:35, Thursday, February 25 2021, (IST) Time in India</font--> 
 <!--a href="https://info.flagcounter.com/swZl"><img src="https://s04.flagcounter.com/count/swZl/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_8/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a-->
 <a href="https://info.flagcounter.com/swZl"><img src="https://s04.flagcounter.com/count/swZl/bg_FFFFFF/txt_7C1E2F/border_FFFFFF/columns_4/maxflags_12/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Free counters" border="0"></a>
 </body></html>
