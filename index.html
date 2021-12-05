@@ -470,7 +470,46 @@
 
 		<!------Short Paper Publications------>
 		<h5>Posters/Short Papers</h5>
-			<ul>	
+			<ul>
+				<li>
+					<div class="text-justify" id="ParBlockMiddleware2021">
+						<span id="ParBlockMiddleware2021"><font color="#664B50"><b>Anjana Parwat Singh</b></font>, <b>Efficient Parallel Execution of Block Transactions in Blockchain</b>, <i>Proceedings of the 22nd International Middleware Conference: Doctoral Symposium (<b>Middleware 2021</b>), Quebec city, Canada, December 2021.</i></span>
+					</div>
+					<button class="buttonnew"><a class="myclass" href="https://drive.google.com/file/d/1ufOVDRhgOPGpBOZqi_IcI3-_K7TR2kBr/view?usp=sharing" marked="1" target="_blank"><font color="white">Pdf</font></a></button>
+					<button class="buttonnew"><a class="myclass" href="https://doi.org/10.1145/3491087.3493676" marked="1" target="_blank"><font color="white">DOI</font></a></button>
+					<button class="buttonnew" onclick="bibParBlockMiddleware2021()"><font color="white">Bibtex</font></button>
+					<button class="buttonnew" onclick="abstractParBlockMiddleware2021()"><font color="white">Abstract</font></button>
+					<button class="buttonnew"><a class="myclass" href="https://drive.google.com/file/d/18xDnsUHm3iSmN7G-FD0YVMSr5PPqFjTT/view?usp=sharing" marked="1" target="_blank"><font color="white">Slides</font></a></button>
+					<button class="buttonnew"><a class="myclass" href="https://youtu.be/a505E8QrQcU" marked="1" target="_blank"><font color="white">Video</font></a></button>
+					
+					<div id="ParBlockMiddleware2021-bib-file" class="content" style="display:none">
+						<pre>@inproceedings{AnjanaParBlockMiddleware2021,<br>author = {Anjana, Parwat Singh},<br>title = {Efficient Parallel Execution of Block Transactions in Blockchain},<br>year = {2021},<br>isbn = {9781450391559},<br>publisher = {Association for Computing Machinery},<br>address = {New York, NY, USA},<br>url = {https://doi.org/10.1145/3491087.3493676},<br>doi = {10.1145/3491087.3493676},<br>booktitle = {Proceedings of the 22nd International Middleware Conference: Doctoral Symposium},<br>pages = {8–11},<br>numpages = {4},<br>location = {Qu\'{e}bec city, Canada},<br>series = {Middleware '21}<br>}						</pre>
+					</div>
+					<script>
+						function bibParBlockMiddleware2021(parameter) {
+							var x= document.getElementById('ParBlockMiddleware2021-bib-file');
+							if (x.style.display === 'none') {
+								x.style.display = 'block';
+							} else {
+								x.style.display = 'none';
+							}
+						}
+					</script>
+					
+					<div id="abstractParBlockMiddleware2021Full" class="content" style="display:none">
+						<p>Miners and validators in current blockchains serially execute block transactions. Such serial execution cannot efficiently utilize modern multi-core resources, consequently hampering system throughput. We propose three approaches to improve blockchain throughput by introducing parallel execution of block transactions. We present a static analysis-based DiPETrans approach that groups the block transactions into independent shards and executes them parallelly in a distributed fashion using a leader-follower method. DiPETrans is empirically evaluated with 5 million actual transactions from the Ethereum blockchain.Since static analysis fails to identify the conflicts precisely, we introduce OptSmart to exploit multi-processing on a multi-core system to improve throughput further. Miners and validators use multiple threads to parallelly execute smart contract transactions (SCTs) in a block. A miner concurrently executes SCTs using optimistic read-write software transactional memory systems (RWSTMs) and saves the non-conflicting SCTs in the concurrent bin and conflicting SCTs in the block graph (BG). Later, validators re-execute SCTs deterministically in parallel to validate the block by using information appended by the concurrent miner.In terms of throughput, optimistic object-based STMs (OSTMs) with higher-level objects are known to outperform RWSTMs. We propose ObjSC approach based on optimistic OSTM, and a counter-based smart multi-threaded validator (SMV) that efficiently detects and rejects malicious blocks proposed by the malicious miners. The simulation result shows that the proposed approaches outperform existing approaches.</p>
+					</div>
+					<script>
+						function abstractParBlockMiddleware2021(parameter) {
+							var x= document.getElementById('abstractParBlockMiddleware2021Full');
+							if (x.style.display === 'none') {
+								x.style.display = 'block';
+							} else {
+								x.style.display = 'none';
+							}
+						}
+					</script>
+				</li>
 				<li>
 					<div class="text-justify" id="ObjSCARCS2020">
 						<span id="ObjSCARCS2020"><font color="#664B50"><b>Anjana Parwat Singh</b></font>, Hagit Attiya, Sweta Kumari, Sathya Peri, and Archit Somani, <b>Efficient Concurrent Execution of Smart Contracts in Blockchains using Object-based Transactional Memory</b>, <i>Accepted as a Short Paper for Presentation in 15th Academic Research and Careers for Students Symposium (<b>ARCS 2021</b>), Coimbatore, India, February 2021.</i></span>
@@ -897,7 +936,7 @@
  </div>
 </main>
 <hr>
-| <font size="1">Last modified: 15:17, Sunday, December 05 2021, (IST) Time in India</font> | <font size = "1">Copyright ©2019, Anjana Parwat Singh</font> |
+| <font size="1">Last modified: 17:17, Sunday, December 05 2021, (IST) Time in India</font> | <font size = "1">Copyright ©2019, Anjana Parwat Singh</font> |
 <br>
 <!--a href="https://info.flagcounter.com/swZl"><img src="https://s04.flagcounter.com/count/swZl/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_8/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a-->
 <a href="https://info.flagcounter.com/swZl"><img src="https://s04.flagcounter.com/count/swZl/bg_FFFFFF/txt_7C1E2F/border_FFFFFF/columns_4/maxflags_12/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Free counters" border="0"></a>
