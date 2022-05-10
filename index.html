@@ -214,9 +214,8 @@
 					<div class="text-justify" id="OptSmartDAPD2021">
 						<span id="DAPDOptSmart2021"><font color="#664B50"><b>Anjana Parwat Singh</b></font>, Sweta Kumari, Sathya Peri, Sachin Rathor, and Archit Somani, <b>OptSmart: A Space Efficient Optimistic Concurrent Execution of Smart Contracts</b>, <i>Distributed and Parallel Databases (<b>DAPD</b>), Volume ?, No. ?, Pages: ?, ISSN: 1573-7578, Springer Nature Switzerland AG.</i></span>
 					</div>
-					<button class="buttonnew"><font color="white">In Press: DAPD Journal</font></button>
-					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Pdf</font></a></button-->
-					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">DOI</font></a></button-->
+					<!--button class="buttonnew"><a class="myclass" href="https://rdcu.be/cNc5A" marked="1" target="_blank"><font color="white">Pdf</font></a></button-->
+					<!--button class="buttonnew"><a class="myclass" href="https://link.springer.com/article/10.1007/s10619-022-07412-y" marked="1" target="_blank"><font color="white">DOI</font></a></button-->
 					<button class="buttonnew" onclick="bibOptSmartDAPD2021()"><font color="white">Bibtex</font></button>
 					<button class="buttonnew" onclick="abstractOptSmartDAPD2021()"><font color="white">Abstract</font></button>
 					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Slides</font></a> </button-->
@@ -226,7 +225,7 @@
 					<!--button class="buttonnew"><a class="myclass" href=" " marked="1" target="_blank"><font color="white">Video</font></a></button-->
 					
 					<div id="bibOptSmartDAPD2021-bib-file" class="content" style="display:none">
-						<pre>@article{Anjana2021OptSmart,<br>author  = {Parwat Singh Anjana and Sweta Kumari and Sathya Peri and Sachin Rathor and Archit Somani},<br>title     = {OptSmart: A Space Efficient Optimistic Concurrent Execution of Smart Contracts},<br>journal   = {CoRR},<br>volume    = {abs/2102.04875},<br>year      = {2021},<br>url       = {https://arxiv.org/abs/2102.04875},<br>archivePrefix = {arXiv},<br>eprint    = {2102.04875},<br>timestamp = {Thu, 18 Feb 2021 15:26:00 +0100},<br>biburl    = {https://dblp.org/rec/journals/corr/abs-2102-04875.bib},<br>bibsource = {dblp computer science bibliography, https://dblp.org}<br>}
+						<pre>@article{Anjana2021OptSmart,<br>author  = {Parwat Singh Anjana and Sweta Kumari and Sathya Peri and Sachin Rathor and Archit Somani},<br>title     = {OptSmart: A Space Efficient Optimistic Concurrent Execution of Smart Contracts},<br>journal = {Distrib Parallel Databases},<br>volume = { },<br>year = {2022},<br>url = {https://link.springer.com/article/10.1007/s10619-022-07412-y},<br>biburl = {https://doi.org/10.1007/s10619-022-07412-y}<br>}
 						</pre>
 					</div>
 					<script>
@@ -241,7 +240,7 @@
 					</script>
 
 					<div id="abstractOptSmartDAPD2021Full" class="content" style="display:none">
-						<p>Popular blockchains such as Ethereum and several others execute complex transactions in blocks through user-defined scripts known as smart contracts. Serial execution of smart contract transactions/atomic-units (AUs) fails to harness the multiprocessing power offered by the prevalence of multi-core processors. By adding concurrency to the execution of AUs, we can achieve better efficiency and higher throughput. In this paper, we develop a concurrent miner that proposes a block by executing the AUs concurrently using optimistic Software Transactional Memory systems (STMs). It captures the independent AUs in a concurrent bin and dependent AUs in the block graph (BG) efficiently. Later, we propose a concurrent validator that re-executes the same AUs concurrently and deterministically using a concurrent bin followed by a BG given by the miner to verify the proposed block. We rigorously prove the correctness of concurrent execution of AUs and achieve significant performance gain over the state-of-the-art.
+						<p>Popular blockchains such as Ethereum and several others execute complex transactions in the block through user-defined scripts known as smart contracts. Serial execution of smart contract transactions/atomic units (AUs) fails to harness the multiprocessing power offered by the prevalence of multi-core processors. By adding concurrency to the execution of AUs, we can achieve better efficiency and higher throughput. In this paper, we develop a concurrent miner that proposes a block by executing AUs concurrently using optimistic Software Transactional Memory systems (STMs). It efficiently captures independent AUs in the concurrent bin and dependent AUs in the block graph (BG). Later, we propose a concurrent validator that re-executes the same AUs concurrently and deterministically using the concurrent bin followed by the BG given by the miner to verify the block. We rigorously prove the correctness of concurrent execution of AUs. The performance benchmark shows that the average speedup for the optimized concurrent miner is 5.21×, while the maximum is 14.96× over the serial miner. The optimized validator obtains an average speedup of 8.61× to a maximum of 14.65× over the serial validator. The proposed miner outperforms 1.02× to 1.18×, while the proposed validator outperforms 1× to 4.46× over state-of-the-art concurrent miners and validators, respectively. Moreover, the proposed efficient BG saves an average of 2.29× more block space when compared with the state-of-the-art.
 						</p>
 					</div>
 					<script>
