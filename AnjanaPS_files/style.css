@@ -114,7 +114,7 @@ td, th {
 }
 
 /********************************************
- * TOP NAVIGATION BAR
+ * TOP NAVIGATION BAR — FIXED + SAFARI SAFE
  ********************************************/
 .topnav {
   background-color: #D5DBDB;
@@ -127,55 +127,77 @@ td, th {
 
   width: 100%;
   margin: 0;
-  padding: 0;
+
+  height: 55px;                /* TRUE NAVBAR HEIGHT */
+  display: flex;               /* fix safari auto-expansion */
+  align-items: center;         /* vertically align links */
+  padding: 0 10px;             /* small horizontal padding */
 
   z-index: 1000;
   text-transform: uppercase;
-  
-  height: 55px;               /* set real navbar height */
-  line-height: 55px;          /* vertically centers text */
 }
 
+/* Navigation links */
 .topnav a {
-  float: left;
   color: black;
   text-align: center;
-  padding: 15px 20px;
+
+  height: 55px;                /* force link height */
+  line-height: 55px;           /* align text */
+  padding: 0 15px;             /* REMOVE vertical padding */
   text-decoration: none;
+
+  display: flex;
+  align-items: center;
 }
 
+/* Active item */
 .active {
   background-color: black;
   color: white;
 }
 
+/* Hamburger icon hidden by default */
 .topnav .icon {
   display: none;
 }
 
+/* Mobile: show menu button, hide links */
 @media screen and (max-width: 1000px) {
   .topnav a:not(:first-child) {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
+
+  .topnav .icon {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
   }
 }
 
+/* Mobile responsive menu (open state) */
 @media screen and (max-width: 1000px) {
   .topnav.responsive {
-    position: relative;
+    position: fixed;           /* keep it fixed */
+    flex-direction: column;    /* stack items */
+    align-items: flex-start;   /* left-align items */
+    height: auto;              /* expand for items */
+    padding-top: 5px;
   }
+
+  .topnav.responsive a {
+    width: 100%;
+    height: 40px;              /* smaller for menu items */
+    line-height: 40px;
+    padding: 0 15px;
+    display: block;
+  }
+
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
   }
 }
 
