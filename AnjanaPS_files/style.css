@@ -5,7 +5,6 @@ body {
   font-weight: 400;
   margin: 0 auto 20px auto;
 
-  /* Padding around content */
   padding: 10px;
   padding-top: 55px; /* space for fixed nav */
   padding-left: 4%;
@@ -26,13 +25,9 @@ body {
   }
 }
 
-html {
-  font-size: 62.5%;
-}
+html { font-size: 62.5%; }
 
-.topspace {
-  margin-top: 20px;
-}
+.topspace { margin-top: 20px; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1rem;
@@ -63,9 +58,9 @@ td, th {
   .container {
     padding-left: 10px !important;
     padding-right: 10px !important;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1100px;
   }
 }
 
@@ -98,23 +93,17 @@ td, th {
   cursor: pointer;
   border-radius: 5px;
 }
-.buttonnew:hover {
-  background-color: gray;
-  color: #065499;
-}
+.buttonnew:hover { background-color: gray; color: #065499; }
 
 .button1 {
   background-color: white;
   color: black;
   border: 1px solid #1026DB;
 }
-.button1:hover {
-  background-color: white;
-  color: #065499;
-}
+.button1:hover { background-color: white; color: #065499; }
 
 /********************************************
- * TOP NAVIGATION BAR — FIXED + SAFARI SAFE
+ * TOP NAVIGATION BAR — FIXED
  ********************************************/
 .topnav {
   background-color: #D5DBDB;
@@ -126,69 +115,58 @@ td, th {
   right: 0;
 
   width: 100%;
-  margin: 0;
+  height: 55px;
+  display: flex;
+  align-items: center;
 
-  height: 55px;                /* TRUE NAVBAR HEIGHT */
-  display: flex;               /* fix safari auto-expansion */
-  align-items: center;         /* vertically align links */
-  padding: 0 10px;             /* small horizontal padding */
+  margin: 0;
+  padding: 0 10px;
 
   z-index: 1000;
   text-transform: uppercase;
 }
 
-/* Navigation links */
 .topnav a {
   color: black;
   text-align: center;
 
-  height: 55px;                /* force link height */
-  line-height: 55px;           /* align text */
-  padding: 0 15px;             /* REMOVE vertical padding */
+  height: 55px;
+  line-height: 55px;
+  padding: 0 15px;
   text-decoration: none;
 
   display: flex;
   align-items: center;
 }
 
-/* Active item */
 .active {
   background-color: black;
   color: white;
 }
 
-/* Hamburger icon hidden by default */
-.topnav .icon {
-  display: none;
-}
+.topnav .icon { display: none; }
 
-/* Mobile: show menu button, hide links */
 @media screen and (max-width: 1000px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
+  .topnav a:not(:first-child) { display: none; }
 
   .topnav .icon {
     display: flex;
     margin-left: auto;
-    justify-content: center;
-    align-items: center;
   }
 }
 
-/* Mobile responsive menu (open state) */
 @media screen and (max-width: 1000px) {
   .topnav.responsive {
-    position: fixed;           /* keep it fixed */
-    flex-direction: column;    /* stack items */
-    align-items: flex-start;   /* left-align items */
-    height: auto;              /* expand for items */
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
     padding-top: 25px;
   }
 
   .topnav.responsive a {
     width: 100%;
-    height: auto;              /* smaller for menu items */
+    height: auto;
     line-height: 40px;
     padding: 0 15px;
     display: block;
@@ -202,60 +180,14 @@ td, th {
 }
 
 /********************************************
- * POPUP (unchanged)
- ********************************************/
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.popup .popuptext {
-  visibility: hidden;
-  width: 95%;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: 10px;
-}
-
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.popup .show {
-  visibility: visible;
-  animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1;}
-}
-
-/********************************************
- * HERO SECTION (FINAL CLEAN VERSION)
+ * HERO SECTION
  ********************************************/
 .hero {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 32px;
-  margin-top: 0px;
-  padding-top: 0
+  margin-top: 0;
   flex-wrap: nowrap;
 }
 
@@ -278,7 +210,7 @@ td, th {
   border-radius: 4px;
 }
 
-/* Icons clean and consistent */
+/* Icons */
 .icon-row {
   margin-top: 12px;
   display: flex;
@@ -292,81 +224,61 @@ td, th {
   display: block;
 }
 
-/**************
- * MOBILE
- **************/
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-left {
-    text-align: center;
-  }
-
-  .profile-photo {
-    max-width: 180px;
-    margin: 0 auto;
-  }
-
-  .icon-row {
-    justify-content: center;
-  }
-
-  .icon-row img {
-    height: 24px;
-  }
+  .hero { flex-direction: column; text-align: center; }
+  .hero-left { text-align: center; }
+  .profile-photo { max-width: 180px; margin: 0 auto; }
+  .icon-row { justify-content: center; }
+  .icon-row img { height: 24px; }
 }
 
-/**************
- * VERY SMALL SCREENS
- **************/
 @media (max-width: 480px) {
-  .profile-photo {
-    max-width: 150px;
-  }
-  .icon-row img {
-    height: 22px;
-  }
+  .profile-photo { max-width: 150px; }
+  .icon-row img { height: 22px; }
 }
 
-
-/* Remove extra top gap on iPhone Safari */
+/********************************************
+ * SAFARI MOBILE FIX — THE ONLY REAL FIX
+ ********************************************/
 @supports (-webkit-touch-callout: none) {
   body {
-    padding-top: 10px !important; /* reduce navbar offset */
+    padding-top: auto !important; /* EXACT navbar height */
   }
-
   .hero {
-    margin-top: 0 !important; /* remove added space */
-    padding-top: 0 !important;
-  }
-
-  .hero-left img.profile-photo {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 }
 
 
-/* Fix mid-size laptop/tablet view when browser width is reduced */
-@media (max-width: 1024px) {
-  .hero {
-    flex-wrap: wrap;      /* allow photo + text to stack if needed */
-    justify-content: center;
-    margin-top: 10px !important;  /* remove the big top gap */
-    padding-top: 0 !important;
-  }
+/********************************************
+ * FIX: dynamic navbar height — remove gap on mobile & small windows
+ ********************************************/
+:root {
+  --nav-height: 55px;   /* default height */
+}
 
-  .hero-left,
-  .hero-right {
-    flex: none;
-    width: 100%;
-    text-align: center;
-  }
+body {
+  padding-top: var(--nav-height) !important;
+}
 
-  .hero-left .profile-photo {
-    margin: 0 auto;
+/* When navbar grows because menu collapses (small width) */
+@media (max-width: 1000px) {
+  :root {
+    --nav-height: 65px;  /* slightly taller for collapsed menu */
+  }
+  .topnav {
+    height: var(--nav-height);
+    line-height: var(--nav-height);
+  }
+  body {
+    padding-top: var(--nav-height) !important;
+  }
+}
+
+/* Extra fallback for extreme cases (iPhone Safari rendering) */
+@supports (-webkit-touch-callout: none) {
+  body {
+    padding-top: calc(var(--nav-height) + 15px) !important;
   }
 }
