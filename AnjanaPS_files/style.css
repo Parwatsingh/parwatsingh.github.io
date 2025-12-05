@@ -221,7 +221,7 @@ td, th {
 
 .icon-row img {
   height: 35px;
-  width: 100%;
+  width: auto;
   display: block;
 }
 
