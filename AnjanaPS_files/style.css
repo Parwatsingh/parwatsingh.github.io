@@ -291,7 +291,7 @@ body {
 .theme-btn {
   float: right;
   //padding: 2px 2px;
-  font-size: 1.5rem;
+  //font-size: rem;
   border: .5px solid var(--text);
   border-radius: 5px;
   cursor: pointer;
