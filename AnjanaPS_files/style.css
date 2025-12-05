@@ -242,12 +242,11 @@ td, th {
  ********************************************/
 @supports (-webkit-touch-callout: none) {
   body {
-    padding-top: auto !important; /* EXACT navbar height */
+    padding-top: 55px !important; /* EXACT navbar height */
   }
   .hero {
     margin-top: 0 !important;
-    padding-top: 10 !important;
-    padding-bottom: 0 !important;
+    padding-top: 0 !important;
   }
 }
 
@@ -280,6 +279,6 @@ body {
 /* Extra fallback for extreme cases (iPhone Safari rendering) */
 @supports (-webkit-touch-callout: none) {
   body {
-    padding-top: calc(var(--nav-height) + 15px) !important;
+    padding-top: calc(var(--nav-height) + 5px) !important;
   }
 }
