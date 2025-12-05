@@ -1,31 +1,35 @@
 /********************************************
  * GLOBAL BODY + TYPOGRAPHY
  ********************************************/
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-weight: 400;
   margin: 0 auto 20px auto;
 
   padding: 10px;
-  padding-top: 55px; /* space for fixed nav */
   padding-left: 4%;
   padding-right: 4%;
 
   max-width: 1100px;
 
   font-size: 1.5em;
-  font-family: "Open sans", Arial;
+  font-family: "Open sans", Arial, sans-serif;
   color: #222;
+
+  /* space for fixed nav */
+  padding-top: 60px;
 }
 
 @media (max-width: 768px) {
   body {
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 70px;
+    padding-top: 70px; /* slightly more for wrapped nav */
   }
 }
-
-html { font-size: 62.5%; }
 
 .topspace { margin-top: 20px; }
 
@@ -103,7 +107,7 @@ td, th {
 .button1:hover { background-color: white; color: #065499; }
 
 /********************************************
- * TOP NAVIGATION BAR — FIXED
+ * TOP NAVIGATION BAR — FIXED + MOBILE DROPDOWN
  ********************************************/
 .topnav {
   background-color: #D5DBDB;
@@ -115,67 +119,63 @@ td, th {
   right: 0;
 
   width: 100%;
-  height: 55px;
-  display: flex;
-  align-items: center;
-
   margin: 0;
-  padding: 0 10px;
 
   z-index: 1000;
   text-transform: uppercase;
 }
 
+/* desktop / default */
 .topnav a {
+  float: left;
+  display: block;
   color: black;
   text-align: center;
-
-  height: 55px;
-  line-height: 55px;
-  padding: 0 15px;
+  padding: 18px 16px; /* ~55–60px total height */
   text-decoration: none;
-
-  display: flex;
-  align-items: center;
 }
 
-.active {
+.topnav a.active {
   background-color: black;
   color: white;
 }
 
-.topnav .icon { display: none; }
+.topnav .icon {
+  display: none;
+}
 
+/* mobile: collapse into hamburger */
 @media screen and (max-width: 1000px) {
-  .topnav a:not(:first-child) { display: none; }
+  .topnav a:not(:first-child) {
+    display: none;
+  }
 
-  .topnav .icon {
-    display: flex;
-    margin-left: auto;
+  .topnav a.icon {
+    float: right;
+    display: block;
   }
 }
 
+/* mobile: menu open (myFunction adds .responsive) */
 @media screen and (max-width: 1000px) {
   .topnav.responsive {
     position: fixed;
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding-top: 25px;
-  }
-
-  .topnav.responsive a {
-    width: 100%;
-    height: auto;
-    line-height: 40px;
-    padding: 0 15px;
-    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
   }
 }
 
@@ -224,61 +224,42 @@ td, th {
   display: block;
 }
 
+/* mobile layout: stack + reduce gap below photo */
 @media (max-width: 768px) {
-  .hero { flex-direction: column; text-align: center; }
-  .hero-left { text-align: center; }
-  .profile-photo { max-width: 180px; margin: 0 auto; }
-  .icon-row { justify-content: center; }
-  .icon-row img { height: 24px; }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .profile-photo {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .hero-right {
+    text-align: left;
+    width: 100%;
+  }
+
+  /* kill big white gap under the image */
+  .hero-right h1 {
+    margin-top: 0.4rem;
+  }
+
+  .icon-row {
+    justify-content: center;
+  }
+
+  .icon-row img {
+    height: 24px;
+  }
 }
 
 @media (max-width: 480px) {
   .profile-photo { max-width: 150px; }
   .icon-row img { height: 22px; }
-}
-
-/********************************************
- * SAFARI MOBILE FIX — THE ONLY REAL FIX
- ********************************************/
-@supports (-webkit-touch-callout: none) {
-  body {
-    padding-top: 55px !important; /* EXACT navbar height */
-  }
-  .hero {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-}
-
-
-/********************************************
- * FIX: dynamic navbar height — remove gap on mobile & small windows
- ********************************************/
-:root {
-  --nav-height: 55px;   /* default height */
-}
-
-body {
-  padding-top: var(--nav-height) !important;
-}
-
-/* When navbar grows because menu collapses (small width) */
-@media (max-width: 1000px) {
-  :root {
-    --nav-height: 65px;  /* slightly taller for collapsed menu */
-  }
-  .topnav {
-    height: var(--nav-height);
-    line-height: var(--nav-height);
-  }
-  body {
-    padding-top: var(--nav-height) !important;
-  }
-}
-
-/* Extra fallback for extreme cases (iPhone Safari rendering) */
-@supports (-webkit-touch-callout: none) {
-  body {
-    padding-top: calc(var(--nav-height) + 5px) !important;
-  }
 }
