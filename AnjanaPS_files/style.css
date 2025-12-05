@@ -309,7 +309,7 @@ td, th {
 /* Remove extra top gap on iPhone Safari */
 @supports (-webkit-touch-callout: none) {
   body {
-    padding-top: 60px !important; /* reduce navbar offset */
+    padding-top: 10px !important; /* reduce navbar offset */
   }
 
   .hero {
