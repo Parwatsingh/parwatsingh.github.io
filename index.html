@@ -1,87 +1,43 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
 
-<html lang="en"><head><meta charset="utf-8"/>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-168671263-1"></script>
-<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168671263-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "UA-168671263-1");
+  </script>
 
-	  gtag('config', 'UA-168671263-1');
-	</script>
-<!---meta http-equiv="content-type" content="text/html; charset=UTF-8"-->
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Portfolio of Anjana Parwat Singh" name="description"/>
-<meta content="Parwat Singh Anjana" name="author"/>
-<title>Parwat Singh Anjana</title>
-<link href="./AnjanaPS_files/supra.png" rel="shortcut icon"/>
-<meta content="Anjana Parwat Singh, Parvat Singh Anjana, Aanjna, Research Scholar, PhD, IITH, Hyderabad, Blockchain" name="keywords"/>
-<style>
-.profile-photo {
-  max-width: 240px;
-  width: auto;
-  height: auto;
-  float: auto;
-  margin-right: auto;
-  margin-bottom: auto;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Anjana Parwat Singh" />
+  <meta name="author" content="Parwat Singh Anjana" />
+  <title>Parwat Singh Anjana</title>
+  <link rel="shortcut icon" href="./AnjanaPS_files/supra.png" />
 
-/* Mobile layout: stack image above text and center content */
-@media (max-width: 768px) {
-  .profile-photo {
-    float: auto;
-    display: block;
-    margin: 0 auto 20px auto;
-  }
+  <meta
+    name="keywords"
+    content="Anjana Parwat Singh, Parvat Singh Anjana, Aanjna, Research Scholar, PhD, IITH, Hyderabad, Blockchain"
+  />
 
-  /* Make the hero table responsive */
-  #content table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+  <!-- All layout/visual styles are in this file -->
+  <link rel="stylesheet" type="text/css" href="./AnjanaPS_files/style.css" />
 
-  #content table tr {
-    display: block;
-  }
-
-  #content table td {
-    display: block;
-    width: 100% !important;
-    text-align: center;
-  }
-
-  /* Slight spacing between picture block and text block */
-  #content table td:nth-child(2) {
-    padding-top: 5px;
-  }
-}
-
-.icon-row img {height:28px !important; width:auto !important; margin:0 3px;}
-</style>
-<link href="./AnjanaPS_files/style.css" rel="stylesheet" type="text/css"/>
-<script async="" src="./AnjanaPS_files/analytics.js"></script><script src="./AnjanaPS_files/Anjana.js"></script>
-<script>
-	function myFunction() {
-		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-		}
-	}
-	</script>
-
-<style>
-.icon-row img {height:28px !important; width:auto !important; margin:0 1px;}
-</style>
-
+  <!-- Local scripts -->
+  <script async src="./AnjanaPS_files/analytics.js"></script>
+  <script src="./AnjanaPS_files/Anjana.js"></script>
+  <script src="AnjanaPS_files/tnav.js"></script>
 </head>
+
 <!-----------------------------------------------
 ----------------------------------------------------
 ----------------------------------------------------->
-<body data-gr-c-s-loaded="true">
+<body>
 <a name="home"></a>
+
 <header id="header">
   <div class="topnav" id="myTopnav">
     <!-- Brand / email -->
@@ -89,239 +45,330 @@
       <span style="color:white">@ANJANA</span>
     </a>
 
-    <!-- Internal anchors (no full URL, avoids reload) -->
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#education" onclick="closeMenu()">Education</a>
-    <a href="#publications" onclick="closeMenu()">Publications</a>
-    <a href="#association" onclick="closeMenu()">Association</a>
-    <a href="#achievements" onclick="closeMenu()">Achievements</a>
-    <a href="#services" onclick="closeMenu()">Services</a>
-
-    <div class="dropdown">
-      <!-- (kept for future use; currently unused) -->
-      <!--
-      <div class="dropdown-content">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#education" onclick="closeMenu()">Education</a>
-        <a href="#publications" onclick="closeMenu()">Publications</a>
-        <a href="#association" onclick="closeMenu()">Association</a>
-        <a href="#achievements" onclick="closeMenu()">Achievements</a>
-        <a href="#services" onclick="closeMenu()">Services</a>
-      </div>
-      -->
-    </div>
+    <!-- Internal anchors -->
+    <a href="#home" onclick="closeMenu()">HOME</a>
+    <a href="#education" onclick="closeMenu()">EDUCATION</a>
+    <a href="#publications" onclick="closeMenu()">PUBLICATIONS</a>
+    <a href="#association" onclick="closeMenu()">ASSOCIATION</a>
+    <a href="#services" onclick="closeMenu()">ACHIEVEMENTS</a>
+    <a href="#services" onclick="closeMenu()">SERVICES</a>
 
     <!-- Hamburger icon for mobile -->
-    <a class="icon" href="javascript:void(0);" onclick="myFunction()">☰</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">☰</a>
   </div>
 </header>
 
+
 <main id="main">
-<div class="container">
-
-  <div class="row topspace hero" id="content">
-
-    <div class="hero-left">
-      <img
-        alt="A Picture of Anjana Parwat Singh"
-        src="./AnjanaPS_files/anjana2.jpg"
-        class="profile-photo"
-      />
-
+  <div class="container">
+    <div class="row topspace hero" id="content">
       
-    </div>
-
-    <div class="hero-right">
-      <h1>Parwat Singh Anjana</h1>
-      <h5>
-        <b>Applied Researcher</b> [at] <a class="myclass"
-           href="https://supra.com/research-team/parwat-singh/"
-           target="_blank">Supra
-        </a>
-        <br />
-        <b>PhD</b> [from]
-        <a href="https://iith.ac.in" target="_blank">Indian Institute of Technology Hyderabad</a> (IIT Hyderabad), India
-        <br />
-        <b>Address:</b> Udaipur, Rajasthan, India (313001)
-        <br />
-        <b>Email:</b> <a href="mailto:p.anjana@supra.com">p.anjana [at] supra [dot] com</a>, <a href="mailto:anjana.uoh@gmail.com">anjana.uoh [at] gmail [dot] com</a>
-      </h5>
-      <div class="icon-row">
-        <a class="myclass"
-           href="https://scholar.google.com/citations?user=XI9eymcAAAAJ&amp;hl=en"
-           target="_blank"
-           title="Google Scholar Profile of Anjana Parwat Singh">
-          <img alt="Google Scholar ID Icon" src="./AnjanaPS_files/gs.png" />
-        </a>
-
-        <a class="myclass"
-           href="https://orcid.org/0000-0002-6574-3871"
-           target="_blank"
-           title="Orcid Profile of Anjana Parwat Singh">
-          <img alt="ORCID ID Icon" src="./AnjanaPS_files/orcid.png" />
-        </a>
-
-        <a class="myclass"
-           href="https://www.researchgate.net/profile/Parwat_Anjana"
-           target="_blank"
-           title="ResearchGate Profile of Anjana Parwat Singh">
-          <img alt="ResearchGate ID Icon" src="./AnjanaPS_files/rg.png" />
-        </a>
-
-        <a class="myclass"
-           href="https://dblp.org/pers/a/Anjana:Parwat_Singh.html"
-           target="_blank"
-           title="DBLP Profile of Anjana Parwat Singh">
-          <img alt="DBLP ID Icon" src="./AnjanaPS_files/dblp.png" />
-        </a>
-
-        <a class="myclass"
-           href="https://www.scopus.com/authid/detail.uri?authorId=57191363856"
-           target="_blank"
-           title="Scopus Profile of Anjana Parwat Singh">
-          <img alt="Scopus ID Icon" src="./AnjanaPS_files/scopus.png" />
-        </a>
-
-        <a class="myclass"
-           href="https://www.linkedin.com/in/parwatsingh/"
-           target="_blank"
-           title="Linkedin Profile of Anjana Parwat Singh">
-          <img alt="Linkedin Icon" src="./AnjanaPS_files/li.png" />
-        </a>
+      <!-- Left: profile photo -->
+      <div class="hero-left">
+        <img
+          src="./AnjanaPS_files/anjana2.jpg"
+          alt="A Picture of Anjana Parwat Singh"
+          class="profile-photo"
+        />
       </div>
+
+      <!-- Right: text + icons -->
+      <div class="hero-right">
+        <h1>Parwat Singh Anjana</h1>
+
+        <h5>
+          <b>Applied Researcher</b> [at]
+          <a
+            class="myclass"
+            href="https://supra.com/research-team/parwat-singh/"
+            target="_blank"
+          >Supra</a>
+          <br />
+
+          <b>PhD</b> [from]
+          <a href="https://iith.ac.in" target="_blank">
+            Indian Institute of Technology Hyderabad
+          </a>
+          (IIT Hyderabad), India
+          <br />
+
+          <b>Address:</b> Udaipur, Rajasthan, India (313001)
+          <br />
+
+          <b>Email:</b>
+          <a href="mailto:p.anjana@supra.com">
+            p.anjana [at] supra [dot] com
+          </a>,
+          <a href="mailto:anjana.uoh@gmail.com">
+            anjana.uoh [at] gmail [dot] com
+          </a>
+        </h5>
+
+        <div class="icon-row">
+          <a
+            class="myclass"
+            href="https://scholar.google.com/citations?user=XI9eymcAAAAJ&amp;hl=en"
+            target="_blank"
+            title="Google Scholar Profile of Anjana Parwat Singh"
+          >
+            <img src="./AnjanaPS_files/gs.png" alt="Google Scholar ID Icon" />
+          </a>
+
+          <a
+            class="myclass"
+            href="https://orcid.org/0000-0002-6574-3871"
+            target="_blank"
+            title="Orcid Profile of Anjana Parwat Singh"
+          >
+            <img src="./AnjanaPS_files/orcid.png" alt="ORCID ID Icon" />
+          </a>
+
+          <a
+            class="myclass"
+            href="https://www.researchgate.net/profile/Parwat_Anjana"
+            target="_blank"
+            title="ResearchGate Profile of Anjana Parwat Singh"
+          >
+            <img src="./AnjanaPS_files/rg.png" alt="ResearchGate ID Icon" />
+          </a>
+
+          <a
+            class="myclass"
+            href="https://dblp.org/pers/a/Anjana:Parwat_Singh.html"
+            target="_blank"
+            title="DBLP Profile of Anjana Parwat Singh"
+          >
+            <img src="./AnjanaPS_files/dblp.png" alt="DBLP ID Icon" />
+          </a>
+
+          <a
+            class="myclass"
+            href="https://www.scopus.com/authid/detail.uri?authorId=57191363856"
+            target="_blank"
+            title="Scopus Profile of Anjana Parwat Singh"
+          >
+            <img src="./AnjanaPS_files/scopus.png" alt="Scopus ID Icon" />
+          </a>
+
+          <a
+            class="myclass"
+            href="https://www.linkedin.com/in/parwatsingh/"
+            target="_blank"
+            title="Linkedin Profile of Anjana Parwat Singh"
+          >
+            <img src="./AnjanaPS_files/li.png" alt="Linkedin Icon" />
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
-<hr/>
-<!---------------------------------------------------->
-<!---------------------------------------------------->
-<!---------------------------------------------------->
-<!------About Me------>
 
-<h4>About Me</h4>
 
-<p>Welcome to my personal web page.</p>
+  <hr />
 
-<p>
-I am Parwat Singh Anjana, an Applied Researcher at 
-<a class="myclass" href="https://supra.com" target="_blank">Supra</a>, where I work on the design and analysis of high-performance blockchain execution systems. 
-My work primarily focuses on parallel and distributed systems, especially blockchain execution, including conflict-aware parallel execution (for 
-EVM, MoveVM, and SVM), transactional memory, optimistic concurrency techniques, performance analysis, and the foundations of scalable 
-transaction processing for modern decentralized platforms.
-</p>
+  <!---------------------------------------------------->
+  <!-------------------- About Me ---------------------->
+  <!---------------------------------------------------->
+  <h4>About Me</h4>
 
-<p>
-I received my PhD in Computer Science from the 
-<a class="myclass" href="https://iith.ac.in" target="_blank">Indian Institute of Technology Hyderabad</a>, India, advised by 
-<a class="myclass" href="http://www.iith.ac.in/~sathya_p/" target="_blank">Dr. Sathya Peri</a>. 
-My doctoral research explored parallel and optimistic execution models for smart contracts and transactional memory abstractions for blockchains  
-(<a class="myclass" href="https://shodhganga.inflibnet.ac.in/bitstream/10603/454947/3/cs17resch11004%20_parwatsingh%20anjana_t.pdf" target="_blank">PhD Thesis</a>).  
-Before this, I completed my M.Tech in Computer Science at the 
-<a class="myclass" href="https://uohyd.ac.in" target="_blank">University of Hyderabad</a> under the supervision of 
-<a class="myclass" href="https://scis.uohyd.ac.in/~wankarcs/" target="_blank">Dr. Rajeev Wankar</a>.
-</p>
+  <p>Welcome to my personal web page.</p>
 
-<p>
-My broader interests include distributed systems, parallel computing, transactional memory, CRDTs, and systems for data consistency and scalability. 
-I enjoy building rigorous models, conducting empirical analyses, and developing practical execution engines that maximize throughput while preserving correctness.
-</p>
+  <p>
+    I am Parwat Singh Anjana, an Applied Researcher at
+    <a class="myclass" href="https://supra.com" target="_blank">Supra</a>,
+    where I work on the design and analysis of high-performance blockchain
+    execution systems. My work primarily focuses on parallel and distributed
+    systems, especially blockchain execution, including conflict-aware parallel
+    execution (for EVM, MoveVM, and SVM), transactional memory, optimistic
+    concurrency techniques, performance analysis, and the foundations of
+    scalable transaction processing for modern decentralized platforms.
+  </p>
 
-<p>
-You can find more details in my 
-<a class="myclass" href="AnjanaPS_files/Anjana_CV.pdf" target="_blank">CV</a>.
-</p>
+  <p>
+    I received my PhD in Computer Science from the
+    <a class="myclass" href="https://iith.ac.in" target="_blank">
+      Indian Institute of Technology Hyderabad
+    </a>, India, advised by
+    <a
+      class="myclass"
+      href="http://www.iith.ac.in/~sathya_p/"
+      target="_blank"
+    >Dr. Sathya Peri</a>.
+    My doctoral research explored parallel and optimistic execution models for
+    smart contracts and transactional memory abstractions for blockchains
+    (<a
+      class="myclass"
+      href="https://shodhganga.inflibnet.ac.in/bitstream/10603/454947/3/cs17resch11004%20_parwatsingh%20anjana_t.pdf"
+      target="_blank"
+    >PhD Thesis</a>).
+    Before this, I completed my M.Tech in Computer Science at the
+    <a class="myclass" href="https://uohyd.ac.in" target="_blank">
+      University of Hyderabad
+    </a>
+    under the supervision of
+    <a
+      class="myclass"
+      href="https://scis.uohyd.ac.in/~wankarcs/"
+      target="_blank"
+    >
+      Dr. Rajeev Wankar</a>.
+  </p>
 
-<hr/>
+  <p>
+    My broader interests include distributed systems, parallel computing,
+    transactional memory, CRDTs, and systems for data consistency and
+    scalability. I enjoy building rigorous models, conducting empirical
+    analyses, and developing practical execution engines that maximize
+    throughput while preserving correctness.
+  </p>
 
-<!---------------------------------------------------->
-<!---------------------------------------------------->
-<!---------------------------------------------------->	
-<h4><a name="recent">Recent!</a></h4>
-<ul>
+  <p>
+    You can find more details in my
+    <a class="myclass" href="AnjanaPS_files/Anjana_CV.pdf" target="_blank">
+      CV</a>.
+  </p>
+
+  <hr />
+
+  <!---------------------------------------------------->
+  <!---------------------- Recent ---------------------->
+  <!---------------------------------------------------->
+  <h4><a name="recent">Recent!</a></h4>
+  <ul>
     <li>
-        <b>[2025]</b> Supra’s parallel EVM execution engine -- currently the 
-        <b>fastest EVM execution engine in the world, to our knowledge</b>.
-        The $1M open challenge and SupraBTM (iBTM) were covered by major crypto 
-        and financial news outlets, including  
-        <a class="myclass" href="https://markets.businessinsider.com/news/currencies/coinbase-ventures-backed-supra-offers-1m-bounty-to-beat-its-parallel-evm-execution-engine-1035562499" target="_blank">Business Insider</a>, 
-        <a class="myclass" href="https://www.etf.com/sections/news/coinbase-ventures-backed-supra-offers-1m-bounty-beat-its-parallel-evm-execution" target="_blank">ETF.com</a>, 
-        <a class="myclass" href="https://zycrypto.com/coinbase-ventures-backed-supra-expands-beta-bounty-program-offering-1m-bounty/" target="_blank">ZyCrypto</a>, 
-        <a class="myclass" href="https://www.kucoin.tr/en/news/flash/supra-expands-supraevm-beta-bounty-program-with-1m-supra-token-reward" target="_blank">KuCoin</a>, 
-        <a class="myclass" href="https://phemex.com/news/article/supra-launches-1m-bounty-for-faster-evm-execution-engine-35986" target="_blank">Phemex</a>, 
-        <a class="myclass" href="https://www.ainvest.com/news/ceo-1m-bounty-challenges-blockchain-teams-outpace-supra-evm-2511/" target="_blank">Ainvest</a>, 
-        <a class="myclass" href="https://coinstats.app/news/d7765b33a51c850c1c101f1d5b189b4d18b79e2ac3efd476e14fe9b15c74fc97_Coinbase-VenturesBacked-Supra-Expands-Beta-Bounty-Program-Offering-1M-Bounty/" target="_blank">CoinStats</a>, 
-        and others.
-        <br/><br/>
-        More details are available in the 
-        <a class="myclass" href="https://docs.supra.com/network/evm/supraevm-beta" target="_blank">SupraEVM Beta documentation</a>.
-        We also released a comparative analysis where SupraBTM significantly
-        outperforms competing engines:  
-        <a class="myclass" href="https://supra.com/academy/supra-vs-monad/" target="_blank">Supra vs. Monad</a>.
+      <b>[2025]</b> Supra’s parallel EVM execution engine -- currently the
+      <b>fastest EVM execution engine in the world, to our knowledge</b>. The
+      $1M open challenge and SupraBTM (iBTM) were covered by major crypto and
+      financial news outlets, including
+      <a
+        class="myclass"
+        href="https://markets.businessinsider.com/news/currencies/coinbase-ventures-backed-supra-offers-1m-bounty-to-beat-its-parallel-evm-execution-engine-1035562499"
+        target="_blank"
+      >Business Insider</a>,
+      <a
+        class="myclass"
+        href="https://www.etf.com/sections/news/coinbase-ventures-backed-supra-offers-1m-bounty-beat-its-parallel-evm-execution"
+        target="_blank"
+      >ETF.com</a>,
+      <a
+        class="myclass"
+        href="https://zycrypto.com/coinbase-ventures-backed-supra-expands-beta-bounty-program-offering-1m-bounty/"
+        target="_blank"
+      >ZyCrypto</a>,
+      <a
+        class="myclass"
+        href="https://www.kucoin.tr/en/news/flash/supra-expands-supraevm-beta-bounty-program-with-1m-supra-token-reward"
+        target="_blank"
+      >KuCoin</a>,
+      <a
+        class="myclass"
+        href="https://phemex.com/news/article/supra-launches-1m-bounty-for-faster-evm-execution-engine-35986"
+        target="_blank"
+      >Phemex</a>,
+      <a
+        class="myclass"
+        href="https://www.ainvest.com/news/ceo-1m-bounty-challenges-blockchain-teams-outpace-supra-evm-2511/"
+        target="_blank"
+      >Ainvest</a>,
+      <a
+        class="myclass"
+        href="https://coinstats.app/news/d7765b33a51c850c1c101f1d5b189b4d18b79e2ac3efd476e14fe9b15c74fc97_Coinbase-VenturesBacked-Supra-Expands-Beta-Bounty-Program-Offering-1M-Bounty/"
+        target="_blank"
+      >CoinStats</a>, and others.
+      <br /><br />
+      More details are available in the
+      <a
+        class="myclass"
+        href="https://docs.supra.com/network/evm/supraevm-beta"
+        target="_blank"
+      >SupraEVM Beta documentation</a>.
+      We also released a comparative analysis where SupraBTM significantly
+      outperforms competing engines:
+      <a
+        class="myclass"
+        href="https://supra.com/academy/supra-vs-monad/"
+        target="_blank"
+      >Supra v/s. Monad</a>.
     </li>
 
-    <br/>
+    <br />
 
     <li>
-        <b>[2025]</b> Paper titled <i>"Block Transactional Memory: A Complexity Study"</i>
-        accepted at <b>SSS 2025</b> as a full paper.  
-        I attended the conference and presented the work.
+      <b>[2025]</b> Paper titled
+      <i>"Block Transactional Memory: A Complexity Study"</i>
+      accepted at <b>SSS 2025</b> as a full paper. I attended the conference and
+      presented the work.
     </li>
 
-    <br/>
+    <br />
 
     <li>
-        <b>[2025]</b> Paper titled <i>"Efficient Parallel Execution of Blockchain Transactions Leveraging Conflict Specifications"</i>
-        accepted at <b>AFT 2025</b> as a full paper.
-        [<a class="myclass" href="https://www.youtube.com/watch?v=bPOJTA4Pu4M" target="_blank">Video</a>]
+      <b>[2025]</b> Paper titled
+      <i>"Efficient Parallel Execution of Blockchain Transactions Leveraging Conflict Specifications"</i>
+      accepted at <b>AFT 2025</b> as a full paper.
+      [<a
+        class="myclass"
+        href="https://www.youtube.com/watch?v=bPOJTA4Pu4M"
+        target="_blank"
+      >Video</a>]
     </li>
 
-    <br/>
+    <br />
 
     <li>
-        <b>[2024]</b> We published our whitepaper on <i>SupraContainer</i>.  
-        [<a class="myclass" href="https://supra.com/documents/Supra-Containers-Whitepaper.pdf" target="_blank">Whitepaper</a>]  
-        [<a class="myclass" href="https://supra.com/containers/" target="_blank">Project page &amp; video</a>]
+      <b>[2024]</b> We published our whitepaper on <i>SupraContainer</i>.
+      [<a
+        class="myclass"
+        href="https://supra.com/documents/Supra-Containers-Whitepaper.pdf"
+        target="_blank"
+      >Whitepaper</a>]
+      [<a
+        class="myclass"
+        href="https://supra.com/containers/"
+        target="_blank"
+      >Project page &amp; video</a>]
     </li>
+  </ul>
 
-</ul>
-<!---------------------------------------------------->
-<!---------------------------------------------------->
-<!---------------------------------------------------->
-<hr/>
-<!------Education------>
-<h4><a name="education">Education</a></h4>
-<ul>
+  <hr />
+
+  <!---------------------------------------------------->
+  <!--------------------- Education -------------------->
+  <!---------------------------------------------------->
+  <h4><a name="education">Education</a></h4>
+  <ul>
     <li>
-        <b>Doctor of Philosophy</b> in Computer Science (July 2017 – January 2022)  
-        from <a class="myclass" href="http://www.iith.ac.in/" target="_blank">
-        Indian Institute of Technology Hyderabad</a>, India.  
-        <a href="https://shodhganga.inflibnet.ac.in/bitstream/10603/454947/3/cs17resch11004%20_parwatsingh%20anjana_t.pdf" target="_blank">
-            PhD Thesis
-        </a>
+      <b>Doctor of Philosophy</b> in Computer Science (July 2017 – January 2022)
+      from
+      <a class="myclass" href="http://www.iith.ac.in/" target="_blank">
+        Indian Institute of Technology Hyderabad</a>, India.
+      <a
+        href="https://shodhganga.inflibnet.ac.in/bitstream/10603/454947/3/cs17resch11004%20_parwatsingh%20anjana_t.pdf"
+        target="_blank"
+      >PhD Thesis</a>
     </li>
 
     <li>
-        <b>Master of Technology</b> in Computer Science (July 2014 – September 2016)  
-        from <a class="myclass" href="https://www.uohyd.ac.in/" target="_blank">
-        University of Hyderabad</a>, India  
-        (8.71 CGPA / 83.88%).
+      <b>Master of Technology</b> in Computer Science (July 2014 – September
+      2016) from<a class="myclass" href="https://www.uohyd.ac.in/" target="_blank">
+        University of Hyderabad</a>, India (8.71 CGPA / 83.88%).
     </li>
 
     <li>
-        <b>Bachelor of Technology</b> in Computer Science (July 2007 – April 2011)  
-        from <a class="myclass" href="http://www.rtu.ac.in/RTU/" target="_blank">
-        Rajasthan Technical University</a>, India  
-        (63.89%).
+      <b>Bachelor of Technology</b> in Computer Science (July 2007 – April 2011)
+      from <a class="myclass" href="http://www.rtu.ac.in/RTU/" target="_blank">Rajasthan Technical University</a>, India (63.89%).
     </li>
-</ul>
-<hr/>
+  </ul>
 
-<!-------------------------------------------->
-<!------------Publications---------------->
-<!-------------------------------------------->
-<h4><a marked="1" name="publications">Publications</a></h4>
+  <hr />
 
-<!--------------------------------------->
+  <!-------------------------------------------->
+  <!------------- Publications ----------------->
+  <!-------------------------------------------->
+  <h4><a name="publications" marked="1">Publications</a></h4>
+
+ <!--------------------------------------->
 <!------Journal Publications------>
 <!--------------------------------------->
 <h5>Journal Papers</h5>
@@ -2109,11 +2156,14 @@ function abstractObjSCicdcn2019() {
 <hr/>
 
 
+  <!-- =========================================================
+       === Association / Services / Achievements sections ======
+       ========================================================= -->
 
-<!----------------------------------->
-<!----------Association---------->
-<!----------------------------------->
-<h4><a marked="1" name="association">Research Association</a></h4>
+  <!----------------------------------->
+  <!---------- Association ------------>
+  <!----------------------------------->
+  <h4><a name="association" marked="1">Research Association</a></h4>
 
 <p>
 I am very fortunate to collaborate with outstanding researchers, mentors, and colleagues whose guidance,
@@ -2163,19 +2213,20 @@ and high-performance blockchain execution.
 <hr/>
 
 
+  <!------------------------------------------------->
+  <!------ Achievements and Services Anchor --------->
+  <!------------------------------------------------->
+  <h4><a name="services" marked="1">Achievements and Services</a></h4>
 
+  <!-- New explicit anchor so #achievements works -->
+  <a name="achievements"></a>
 
-<!------------------------------------------------->
-<!------Services and Achievements------>
-<!------------------------------------------------->
-<h4><a marked="1" name="services">Achievements and Services</a></h4>
+  <!----------------------------------->
+  <!-------- Achievements ------------>
+  <!----------------------------------->
+  <h5>Achievements</h5>
 
-
-<!----------------------------------->
-<!--------Achievements-------->
-<!----------------------------------->
-<h5>Achievements</h5>
-<ul>
+  <ul>
 
     <li>
         Awarded <b>Institute Postdoctoral Fellowship</b> for 6 months (February 2022 to July 2022)
@@ -2210,11 +2261,13 @@ and high-performance blockchain execution.
 
 </ul>
 
-<!----------------------------------->
-<!-----------Services------------>
-<!----------------------------------->
-<h5>Services</h5>
-<ul>
+
+  <!----------------------------------->
+  <!----------- Services ------------->
+  <!----------------------------------->
+  <h5>Services</h5>
+
+  <ul>
 
    <li>
       Invited Speaker at the National Conference on 
@@ -2269,13 +2322,12 @@ and high-performance blockchain execution.
 </ul>
 
 
+  <!----------------------------------->
+  <!----------- Reviewer ------------->
+  <!----------------------------------->
+  <h5>(Sub)Reviewer for the Conferences/Journals</h5>
 
-<!----------------------------------->
-<!-----------Reviews------------->
-<!----------------------------------->
-<h5>(Sub)Reviewer for the Conferences/Journals</h5>
-
-<div>
+  <div>
 <ul class="multi-column">
 
     <!-- Journals -->
@@ -2300,15 +2352,12 @@ and high-performance blockchain execution.
 </div>
 
 
+  <!----------------------------------->
+  <!----------- Teaching ------------->
+  <!----------------------------------->
+  <h5>Teaching Assistant</h5>
 
-
-
-<!----------------------------------->
-<!---------------TA----------------->
-<!----------------------------------->
-
-<h5>Teaching Assistant</h5>
-<ul>
+  <ul>
 
     <li>
         <b>CS5320: Distributed Computing</b>, IIT Hyderabad --
@@ -2372,28 +2421,30 @@ and high-performance blockchain execution.
         SCIS, University of Hyderabad -- Spring 2015.
     </li>
 </ul>
- 
- <hr/>
-</main>
-<div style="text-align:center; margin-top:20px; font-family:Arial, sans-serif;">
 
+
+  <hr />
+</main>
+
+<div
+  style="text-align:center; margin-top:20px; font-family:Arial, sans-serif;"
+>
   <div style="font-size:11px; color:#333;">
     | Last modified: 23:00, Thursday, December 04 2025 (IST) Time in India |
-    <br/>
+    <br />
     | Copyright ©2019, Anjana Parwat Singh |
   </div>
 
-  <br/>
+  <br />
 
   <!-- Flag Counter -->
   <a href="https://info.flagcounter.com/swZl">
-    <img 
-      src="https://s04.flagcounter.com/count/swZl/bg_FFFFFF/txt_7C1E2F/border_FFFFFF/columns_4/maxflags_12/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" 
-      alt="Free counters" 
+    <img
+      src="https://s04.flagcounter.com/count/swZl/bg_FFFFFF/txt_7C1E2F/border_FFFFFF/columns_4/maxflags_12/viewers_0/labels_1/pageviews_0/flags_0/percent_0/"
+      alt="Free counters"
       border="0"
     />
   </a>
-
 </div>
 </body>
 </html>
