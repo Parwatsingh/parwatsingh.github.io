@@ -245,8 +245,8 @@ td, th {
     padding-top: auto !important; /* EXACT navbar height */
   }
   .hero {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    margin-top: 10 !important;
+    padding-top: 10 !important;
   }
 }
 
