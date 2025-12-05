@@ -33,7 +33,6 @@ Key sections include:
 ├── AnjanaPS_files/         # Static resources (CSS, JS, images, icons)
 ├── style.css               # Custom styling
 ├── Anjana.js               # JavaScript interactions (menu, toggles)
-└── assets/ (optional)      # Additional files if added later
 ```
 
 ---
@@ -56,34 +55,11 @@ After that, any commit pushed to the `master` branch automatically updates the l
 
 ---
 
-## Editing and Updating
-
-To update the website:
-
-1. Edit `index.html` or any file inside `AnjanaPS_files/`.
-2. Commit and push to `master`.
-3. GitHub Pages will redeploy automatically.
-
----
-
-## Citation
-
-If you refer to or use content from my research work, please cite the following:
-
-```
-Anjana, P. S., et al.  
-"Empirical Analysis of Transaction Conflicts in Ethereum and Solana for Parallel Execution."  
-arXiv:2505.05358, 2025.  
-https://arxiv.org/abs/2505.05358
-```
-
----
-
 ## Contact
 
 For research collaborations, discussions, or academic queries:
 
-- Email: p.anjana@supra.com  
+- Email: p.anjana@supra.com, anjana.uoh@gmail.com 
 - Google Scholar: https://scholar.google.com/citations?user=XI9eymcAAAAJ  
 - LinkedIn: https://www.linkedin.com/in/parwatsingh/
 
