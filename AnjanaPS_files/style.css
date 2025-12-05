@@ -48,6 +48,7 @@ h6 { font-size: 1.5rem; line-height: 1.6; }
 
 p { margin-top: 0; }
 
+/* original link style (kept; overridden later by new section) */
 a:link { color: #0C21CD; text-decoration: none; }
 a:visited { color: #061BCC; text-decoration: none; }
 a:active { color: #CC21CD; }
@@ -279,6 +280,7 @@ td, th {
   --text: #e1e1e1;
 }
 
+/* apply theme colours */
 body {
   background: var(--bg);
   color: var(--text);
@@ -293,44 +295,52 @@ body {
   border: .5px solid var(--text);
   border-radius: 6px;
   cursor: pointer;
-  color: auto;
+  background: transparent;
+  color: var(--text);
 }
+
 /* ------------------------- */
 /*       LINK COLORS         */
 /* ------------------------- */
 
-/* Light mode (default) */
-a:link {
+/* Light mode (default) – global + nav */
+a:link,
+.topnav a:link {
   color: #0066cc;
+  text-decoration: none;
 }
 
-a:visited {
+a:visited,
+.topnav a:visited {
   color: #551A8B;
+  text-decoration: none;
 }
 
-a:hover {
+a:hover,
+.topnav a:hover {
   color: #003399;
 }
 
-a:active {
+a:active,
+.topnav a:active {
   color: #ff6600;
 }
 
-/* Dark mode overrides */
-.dark-mode a:link {
-  color: #66aaff;
+/* Dark mode overrides – higher specificity so it works on mobile/nav */
+body.dark-mode a,
+body.dark-mode a:link,
+body.dark-mode a:visited,
+body.dark-mode .topnav a {
+  color: #66aaff !important;
+  text-decoration: none;
 }
 
-.dark-mode a:visited {
-  color: #aa88ff;
+body.dark-mode a:hover,
+body.dark-mode .topnav a:hover {
+  color: #cce6ff !important;
 }
 
-.dark-mode a:hover {
-  color: #cce6ff;
+body.dark-mode a:active,
+body.dark-mode .topnav a:active {
+  color: #ffaa33 !important;
 }
-
-.dark-mode a:active {
-  color: #ffaa33;
-}
-
-
