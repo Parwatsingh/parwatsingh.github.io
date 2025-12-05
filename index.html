@@ -19,19 +19,45 @@
 <meta content="Anjana Parwat Singh, Parvat Singh Anjana, Aanjna, Research Scholar, PhD, IITH, Hyderabad, Blockchain" name="keywords"/>
 <style>
 .profile-photo {
-  max-width: 200px;
+  max-width: 240px;
+  width: 100%;
   height: auto;
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
 }
+
+/* Mobile layout: stack image above text and center content */
 @media (max-width: 768px) {
   .profile-photo {
     float: none;
     display: block;
     margin: 0 auto 20px auto;
   }
+
+  /* Make the hero table responsive */
+  #content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  #content table tr {
+    display: block;
+  }
+
+  #content table td {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* Slight spacing between picture block and text block */
+  #content table td:nth-child(2) {
+    padding-top: 10px;
+  }
 }
+
+.icon-row img {height:28px !important; width:auto !important; margin:0 1px;}
 </style>
 <link href="./AnjanaPS_files/style.css" rel="stylesheet" type="text/css"/>
 <script async="" src="./AnjanaPS_files/analytics.js"></script><script src="./AnjanaPS_files/Anjana.js"></script>
@@ -85,7 +111,7 @@
 <table width="100%">
   <tr valign="center">
     <td width="260" style="text-align:left; vertical-align:top;">
-      <img alt="A Picture of Anjana Parwat Singh" src="./AnjanaPS_files/anjana2.jpg" style="width:240px; max-width:100%; height:auto;"/><br/>
+      <img alt="A Picture of Anjana Parwat Singh" src="./AnjanaPS_files/anjana2.jpg" class="profile-photo" /><br/>
       <div class="icon-row" style="text-align:left; margin-top:10px; margin-bottom:10px;">
 
                      <a class="myclass" href="https://scholar.google.com/citations?user=XI9eymcAAAAJ&amp;hl=en" target="_blank" title="Google Scholar Profile of Anjana Parwat Singh"><img alt="Google Scholar ID Icon" src="./AnjanaPS_files/gs.png" style="width:1.33em;margin-top:.1em"/> </a>  
