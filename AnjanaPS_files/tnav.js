@@ -7,3 +7,11 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+// Called when a menu item is clicked (mobile)
+function closeMenu() {
+  var x = document.getElementById("myTopnav");
+  if (x.className.indexOf("responsive") !== -1) {
+    x.className = "topnav";
+  }
+}
