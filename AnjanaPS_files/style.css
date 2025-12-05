@@ -204,7 +204,7 @@ td, th {
 /* Profile Photo RESPONSIVE */
 .profile-photo {
   width: 100%;
-  max-width: 240px;
+  max-width: auto;
   height: auto;
   display: block;
   border-radius: 4px;
