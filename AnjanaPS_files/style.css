@@ -236,8 +236,8 @@ td, th {
   }
 
   .profile-photo {
-    max-width: 180px;
-    margin: 0 auto;
+    max-width: 240px;
+    margin: 0 5;
   }
 
   .hero-right {
@@ -260,6 +260,6 @@ td, th {
 }
 
 @media (max-width: 480px) {
-  .profile-photo { max-width: 150px; }
-  .icon-row img { height: 22px; }
+  .profile-photo { max-width: 240px; }
+  .icon-row img { height: 15px; }
 }
