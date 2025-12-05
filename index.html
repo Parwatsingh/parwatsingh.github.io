@@ -43,6 +43,26 @@
     <a class="active" href="mailto:cs17resch11004@iith.ac.in">
       <span style="color:white">@ANJANA</span>
     </a>
+    <button id="themeToggle" class="theme-btn">Light/Dark 🌓</button>
+  	<script>
+    		const toggle = document.getElementById("themeToggle");
+
+    		// Apply saved preference
+    		if (localStorage.getItem("theme") === "dark") {
+      			document.body.classList.add("dark-mode");
+    		}
+
+           toggle.addEventListener("click", () => {
+           document.body.classList.toggle("dark-mode");
+
+           // Save current mode
+           if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+           } else {
+                localStorage.setItem("theme", "light");
+           }
+         });
+  </script>
 
     <!-- Internal anchors -->
     <a href="#home" onclick="closeMenu()">HOME</a>
@@ -53,7 +73,7 @@
     <a href="#services" onclick="closeMenu()">SERVICES</a>
 
     <!-- Hamburger icon for mobile -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#19977</a>
   </div>
 </header>
 

@@ -215,7 +215,7 @@ td, th {
   margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .icon-row img {
@@ -251,11 +251,11 @@ td, th {
   }
 
   .icon-row {
-    justify-content: center;
+    justify-content: left;
   }
 
   .icon-row img {
-    height: 24px;
+    height: 30px;
   }
 }
 
@@ -263,3 +263,74 @@ td, th {
   .profile-photo { max-width: 240px; }
   .icon-row img { height: 15px; }
 }
+
+
+/* ------------------------- */
+/*   Default LIGHT theme     */
+/* ------------------------- */
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+}
+
+/* DARK theme */
+.dark-mode {
+  --bg: #111111;
+  --text: #e1e1e1;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Simple button style */
+.theme-btn {
+  float: right;
+  padding: 14px 14px;
+  font-size: 2rem;
+  border: .5px solid var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+  color: auto;
+}
+/* ------------------------- */
+/*       LINK COLORS         */
+/* ------------------------- */
+
+/* Light mode (default) */
+a:link {
+  color: #0066cc;
+}
+
+a:visited {
+  color: #551A8B;
+}
+
+a:hover {
+  color: #003399;
+}
+
+a:active {
+  color: #ff6600;
+}
+
+/* Dark mode overrides */
+.dark-mode a:link {
+  color: #66aaff;
+}
+
+.dark-mode a:visited {
+  color: #aa88ff;
+}
+
+.dark-mode a:hover {
+  color: #cce6ff;
+}
+
+.dark-mode a:active {
+  color: #ffaa33;
+}
+
+
