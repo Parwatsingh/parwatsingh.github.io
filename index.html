@@ -43,7 +43,21 @@
     <a class="active" href="mailto:cs17resch11004@iith.ac.in">
       <span style="color:white">@ANJANA</span>
     </a>
-    <button id="themeToggle" class="theme-btn">Light/Dark 🌓</button>
+
+    <!-- Internal anchors -->
+    <a href="#home" onclick="closeMenu()">HOME</a>
+    <a href="#education" onclick="closeMenu()">EDUCATION</a>
+    <a href="#publications" onclick="closeMenu()">PUBLICATIONS</a>
+    <a href="#association" onclick="closeMenu()">ASSOCIATION</a>
+    <a href="#services" onclick="closeMenu()">ACHIEVEMENTS</a>
+    <a href="#services" onclick="closeMenu()">SERVICES</a>
+
+    <!-- Hamburger icon for mobile -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#19977</a>
+  </div>
+</header>
+
+<button id="themeToggle" class="theme-btn" float= "left">Light/Dark 🌓</button>
   	<script>
     		const toggle = document.getElementById("themeToggle");
 
@@ -63,21 +77,7 @@
            }
          });
   </script>
-
-    <!-- Internal anchors -->
-    <a href="#home" onclick="closeMenu()">HOME</a>
-    <a href="#education" onclick="closeMenu()">EDUCATION</a>
-    <a href="#publications" onclick="closeMenu()">PUBLICATIONS</a>
-    <a href="#association" onclick="closeMenu()">ASSOCIATION</a>
-    <a href="#services" onclick="closeMenu()">ACHIEVEMENTS</a>
-    <a href="#services" onclick="closeMenu()">SERVICES</a>
-
-    <!-- Hamburger icon for mobile -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#19977</a>
-  </div>
-</header>
-
-
+  
 <main id="main">
   <div class="container">
     <div class="row topspace hero" id="content">

@@ -111,7 +111,7 @@ td, th {
  * TOP NAVIGATION BAR — FIXED + MOBILE DROPDOWN
  ********************************************/
 .topnav {
-  background-color: #D5DBDB;
+  background-color: black;//#D5DBDB;
   overflow: hidden;
 
   position: fixed;
@@ -290,12 +290,12 @@ body {
 /* Simple button style */
 .theme-btn {
   float: right;
-  padding: 14px 14px;
-  font-size: 2rem;
+  //padding: 2px 2px;
+  font-size: 1.5rem;
   border: .5px solid var(--text);
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  background: transparent;
+  background: gray;
   color: var(--text);
 }
 
