@@ -183,12 +183,12 @@ td, th {
     flex-direction: column;    /* stack items */
     align-items: flex-start;   /* left-align items */
     height: auto;              /* expand for items */
-    padding-top: 5px;
+    padding-top: 25px;
   }
 
   .topnav.responsive a {
     width: 100%;
-    height: 40px;              /* smaller for menu items */
+    height: auto;              /* smaller for menu items */
     line-height: 40px;
     padding: 0 15px;
     display: block;
