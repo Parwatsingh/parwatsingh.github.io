@@ -7,7 +7,7 @@ body {
 
   /* Padding around content */
   padding: 10px;
-  padding-top: 80px; /* space for fixed nav */
+  padding-top: 55px; /* space for fixed nav */
   padding-left: 4%;
   padding-right: 4%;
 
@@ -131,6 +131,9 @@ td, th {
 
   z-index: 1000;
   text-transform: uppercase;
+  
+  height: 55px;               /* set real navbar height */
+  line-height: 55px;          /* vertically centers text */
 }
 
 .topnav a {
@@ -229,7 +232,8 @@ td, th {
   align-items: center;
   justify-content: flex-start;
   gap: 32px;
-  margin-top: 20px;
+  margin-top: 0px;
+  padding-top: 0
   flex-wrap: nowrap;
 }
 
