@@ -304,3 +304,43 @@ td, th {
     height: 22px;
   }
 }
+
+
+/* Remove extra top gap on iPhone Safari */
+@supports (-webkit-touch-callout: none) {
+  body {
+    padding-top: 60px !important; /* reduce navbar offset */
+  }
+
+  .hero {
+    margin-top: 0 !important; /* remove added space */
+    padding-top: 0 !important;
+  }
+
+  .hero-left img.profile-photo {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+
+/* Fix mid-size laptop/tablet view when browser width is reduced */
+@media (max-width: 1024px) {
+  .hero {
+    flex-wrap: wrap;      /* allow photo + text to stack if needed */
+    justify-content: center;
+    margin-top: 10px !important;  /* remove the big top gap */
+    padding-top: 0 !important;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-left .profile-photo {
+    margin: 0 auto;
+  }
+}
