@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Redeploy weekly (Mondays 03:00 UTC) so the Google Scholar stats stay fresh
+  schedule:
+    - cron: "0 3 * * 1"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -31,6 +35,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Update Google Scholar stats
+        # Never blocks the deploy: on any failure the committed scholar.js is used
+        continue-on-error: true
+        run: python3 .github/scripts/update_scholar.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
