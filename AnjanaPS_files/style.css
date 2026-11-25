@@ -332,6 +332,23 @@ a:active { color: var(--highlight); }
   .topnav .nav-long { display: none; }
 }
 
+/* arrow after the strip: › slides to more tabs, ‹ (at the end) goes back */
+.nav-more { display: none; }
+@media screen and (max-width: 1000px) {
+  .nav-more {
+    display: block;
+    flex: none;
+    align-self: stretch;
+    padding: 0 6px 2px;
+    background: transparent;
+    border: 0;
+    color: var(--accent);
+    font: 600 2.6rem/1 var(--sans);
+    cursor: pointer;
+  }
+  .nav-more[hidden] { display: none; }
+}
+
 /********************************************
  * HERO SECTION — photo | details | Scholar card
  ********************************************/
@@ -624,7 +641,7 @@ a:active { color: var(--highlight); }
 }
 .theme-btn:hover { border-color: var(--accent); }
 @media screen and (max-width: 1000px) {
-  .theme-btn { margin-left: 6px; margin-right: 8px; }
+  .theme-btn { margin-left: 2px; margin-right: 8px; }
 }
 
 /********************************************

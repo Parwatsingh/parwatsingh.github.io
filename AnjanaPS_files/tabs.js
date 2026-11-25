@@ -19,11 +19,27 @@
   // Small screens: the tab links sit in a strip that scrolls sideways.
   var strip = document.querySelector(".topnav-tabs");
 
+  var more = document.querySelector(".nav-more");
+
   function updateFades() {
     if (!strip) return;
     var max = strip.scrollWidth - strip.clientWidth;
+    var atEnd = strip.scrollLeft >= max - 2;
     strip.classList.toggle("scrolled", strip.scrollLeft > 2);
-    strip.classList.toggle("at-end", strip.scrollLeft >= max - 2);
+    strip.classList.toggle("at-end", atEnd);
+    if (more) {
+      more.hidden = max <= 2;                       // everything fits: no arrow
+      more.innerHTML = atEnd ? "&#8249;" : "&#8250;"; // ‹ back / › more
+      more.setAttribute("aria-label", atEnd ? "Back to first sections" : "More sections");
+    }
+  }
+
+  if (more && strip) {
+    more.addEventListener("click", function () {
+      var max = strip.scrollWidth - strip.clientWidth;
+      var to = strip.scrollLeft >= max - 2 ? 0 : Math.min(max, strip.scrollLeft + strip.clientWidth * 0.7);
+      strip.scrollTo({ left: to, behavior: "smooth" });
+    });
   }
 
   // Slide the strip (only the strip, not the page) so the current tab is fully visible.
