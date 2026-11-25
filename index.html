@@ -16,7 +16,7 @@
   <meta name="description" content="Portfolio of Anjana Parwat Singh" />
   <meta name="author" content="Parwat Singh Anjana" />
   <title>Parwat Singh Anjana</title>
-  <link rel="shortcut icon" href="./AnjanaPS_files/supra.png" />
+  <link rel="icon" type="image/svg+xml" href="./AnjanaPS_files/favicon.svg" />
 
   <meta
     name="keywords"
@@ -33,9 +33,11 @@
 
   <!-- Local scripts -->
   <script async src="./AnjanaPS_files/analytics.js"></script>
+  <script>document.documentElement.classList.add("tabs-js");</script>
   <script src="AnjanaPS_files/tnav.js"></script>
   <script src="AnjanaPS_files/scholar.js"></script>
   <script defer src="AnjanaPS_files/scholar-card.js"></script>
+  <script defer src="AnjanaPS_files/recent-ticker.js"></script>
 </head>
 
 <!-----------------------------------------------
@@ -51,12 +53,13 @@
     </a>
 
     <!-- Internal anchors -->
-    <a href="#home" onclick="closeMenu()">HOME</a>
-    <a href="#education" onclick="closeMenu()">EDUCATION</a>
-    <a href="#publications" onclick="closeMenu()">PUBLICATIONS</a>
-    <a href="#association" onclick="closeMenu()">ASSOCIATION</a>
-    <a href="#achievements" onclick="closeMenu()">ACHIEVEMENTS</a>
-    <a href="#services" onclick="closeMenu()">SERVICES</a>
+    <a href="#home" data-tab="home" onclick="closeMenu()">HOME</a>
+    <a href="#experience" data-tab="experience" onclick="closeMenu()">EXPERIENCE</a>
+    <a href="#education" data-tab="education" onclick="closeMenu()">EDUCATION &amp; ACHIEVEMENTS</a>
+    <a href="#publications" data-tab="publications" onclick="closeMenu()">PUBLICATIONS</a>
+    <a href="#projects" data-tab="projects" onclick="closeMenu()">PROJECTS</a>
+    <a href="#services" data-tab="services" onclick="closeMenu()">SERVICES</a>
+    <a href="#association" data-tab="association" onclick="closeMenu()">ASSOCIATION</a>
 
     <!-- Hamburger icon for mobile -->
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#19977</a>
@@ -85,6 +88,7 @@
   </script>
   
 <main id="main">
+<section class="tab-page" data-page="home">
   <div class="container">
     <div class="row topspace hero" id="content">
       
@@ -101,30 +105,31 @@
       <div class="hero-right">
         <h1>Parwat Singh Anjana</h1>
 
-        <h5>
-          <b>Applied Researcher</b> [at]
-          <a
-            class="myclass"
-            href="https://supra.com/research-team/parwat-singh/"
-            target="_blank"
-          >Supra</a>
-          <br />
+        <div class="hero-info">
+          <div class="hero-role">
+            <b>Applied Researcher</b> [at]
+            <a
+              class="myclass"
+              href="https://supra.com/research-team/parwat-singh/"
+              target="_blank"
+            >Supra</a>
+          </div>
 
-          <b>PhD</b> [from]
-          <a href="https://iith.ac.in" target="_blank">
-            Indian Institute of Technology Hyderabad</a>, India
-          <br />
+          <div class="hero-line">
+            <b>PhD</b> [from]
+            <span class="nowrap"><a href="https://iith.ac.in" target="_blank">Indian Institute of Technology Hyderabad</a>, India</span>
+          </div>
 
-          <b>Address:</b> Udaipur, Rajasthan, India (313001)
-          <br />
+          <div class="hero-line hero-meta">
+            <b>Address:</b> Udaipur, Rajasthan, India (313001)
+          </div>
 
-          <b>Email:</b>
-          <a href="mailto:p.anjana@supra.com">
-            p.anjana [at] supra [dot] com</a>,
-          <a href="mailto:anjana.uoh@gmail.com">
-            anjana.uoh [at] gmail [dot] com
-          </a>
-        </h5>
+          <div class="hero-line hero-meta">
+            <b>Email:</b>
+            <span class="nowrap"><a href="mailto:p.anjana@supra.com">p.anjana [at] supra [dot] com</a>,</span>
+            <span class="nowrap"><a href="mailto:anjana.uoh@gmail.com">anjana.uoh [at] gmail [dot] com</a></span>
+          </div>
+        </div>
 
         <div class="icon-row">
           <a
@@ -188,61 +193,34 @@
   <!---------------------------------------------------->
   <h4>About Me</h4>
 
-  <p>Welcome to my personal web page.</p>
-
   <p>
-    I am Parwat Singh Anjana, an Applied Researcher at
+    I am an Applied Researcher at
     <a class="myclass" href="https://supra.com" target="_blank">Supra</a>,
-    where I work on the design and analysis of high-performance blockchain
-    execution systems. My work primarily focuses on parallel and distributed
-    systems, especially blockchain execution, including conflict-aware parallel
-    execution (for EVM, MoveVM, and SVM), transactional memory, optimistic
-    concurrency techniques, performance analysis, and the foundations of
-    scalable transaction processing for modern decentralized platforms.
+    where I lead research and engineering on parallel execution of blockchain
+    transactions, taking designs from proof-of-concept to production. I co-designed
+    <b>SupraBTM (iBTM)</b>, a Block Transactional Memory–based parallel execution
+    engine powering SupraEVM and SupraMoveVM, currently the fastest EVM executor.
+    I also work on adaptive parallel execution, SupraContainers,
+    and large-scale analysis of transaction conflicts across blockchains.
   </p>
 
   <p>
-    I received my PhD in Computer Science from the
-    <a class="myclass" href="https://iith.ac.in" target="_blank">
-      Indian Institute of Technology Hyderabad
-    </a>, India, advised by
-    <a
-      class="myclass"
-      href="http://www.iith.ac.in/~sathya_p/"
-      target="_blank"
-    >Dr. Sathya Peri</a>.
-    My doctoral research explored parallel and optimistic execution models for
-    smart contracts and transactional memory abstractions for blockchains
+    I earned my PhD in Computer Science from
+    <a class="myclass" href="https://iith.ac.in" target="_blank">IIT Hyderabad</a>,
+    advised by
+    <a class="myclass" href="http://www.iith.ac.in/~sathya_p/" target="_blank">Dr. Sathya Peri</a>
     (<a
       class="myclass"
       href="https://shodhganga.inflibnet.ac.in/bitstream/10603/454947/3/cs17resch11004%20_parwatsingh%20anjana_t.pdf"
       target="_blank"
-    >PhD Thesis</a>).
-    Before this, I completed my M.Tech in Computer Science at the
-    <a class="myclass" href="https://uohyd.ac.in" target="_blank">
-      University of Hyderabad
-    </a>
-    under the supervision of
-    <a
-      class="myclass"
-      href="https://scis.uohyd.ac.in/~wankarcs/"
-      target="_blank"
-    >
-      Dr. Rajeev Wankar</a>.
-  </p>
-
-  <p>
-    My broader interests include distributed systems, parallel computing,
-    transactional memory, CRDTs, and systems for data consistency and
-    scalability. I enjoy building rigorous models, conducting empirical
-    analyses, and developing practical execution engines that maximize
-    throughput while preserving correctness.
-  </p>
-
-  <p>
-    You can find more details in my
-    <a class="myclass" href="AnjanaPS_files/Anjana_CV.pdf" target="_blank">
-      CV</a>.
+    >thesis</a>), and was a postdoctoral researcher there before joining Supra.
+    Earlier, I completed my M.Tech at the
+    <a class="myclass" href="https://uohyd.ac.in" target="_blank">University of Hyderabad</a>
+    under
+    <a class="myclass" href="https://scis.uohyd.ac.in/~wankarcs/" target="_blank">Dr. Rajeev Wankar</a>.
+    My interests span blockchains, parallel and distributed systems, and
+    software transactional memory. More details are in my
+    <a class="myclass" href="AnjanaPS_files/Anjana_CV.pdf" target="_blank">CV</a>.
   </p>
 
   <hr />
@@ -251,6 +229,9 @@
   <!--------------------Recent ---------------------->
   <!---------------------------------------------------->
   <h4><a name="recent">Recent!</a></h4>
+  <!-- Slowly scrolls up and loops (recent-ticker.js); pauses on hover/focus -->
+  <div class="recent-ticker" id="recentTicker">
+  <div class="recent-track">
   <ul>
     <li>
       <b>[2026]</b> The extended version of our SSS 2025 paper
@@ -280,9 +261,9 @@
       financial news outlets, including
       <a
         class="myclass"
-        href="https://markets.businessinsider.com/news/currencies/coinbase-ventures-backed-supra-offers-1m-bounty-to-beat-its-parallel-evm-execution-engine-1035562499"
+        href="https://decrypt.co/348703/coinbase-ventures-backed-supra-offers-1m-bounty-to-beat-its-parallel-evm-execution-engine"
         target="_blank"
-      >Business Insider</a>,
+      >Decrypt</a>,
       <a
         class="myclass"
         href="https://www.etf.com/sections/news/coinbase-ventures-backed-supra-offers-1m-bounty-beat-its-parallel-evm-execution"
@@ -313,13 +294,13 @@
         href="https://coinstats.app/news/d7765b33a51c850c1c101f1d5b189b4d18b79e2ac3efd476e14fe9b15c74fc97_Coinbase-VenturesBacked-Supra-Expands-Beta-Bounty-Program-Offering-1M-Bounty/"
         target="_blank"
       >CoinStats</a>, and others.
-      <br /><br />
+      <br />
       More details are available in the
       <a
         class="myclass"
-        href="https://docs.supra.com/network/evm/supraevm-beta"
+        href="https://docs.supra.com/network/evm"
         target="_blank"
-      >SupraEVM Beta documentation</a>.
+      >SupraEVM documentation</a>.
       We also released a comparative analysis where SupraBTM significantly
       outperforms competing engines:
       <a
@@ -366,7 +347,149 @@
       >Project page &amp; video</a>]
     </li>
   </ul>
+  </div>
+  </div>
+  <hr />
+  <!-- Last modified: shown on the Home tab only -->
+  <div
+  style="text-align:left; margin-top:20px; font-family:Arial, sans-serif;"
+>
+  <div style="font-size:11px; color:#333;">
+    | Last modified: 01:42, Thursday, November 26 2026 (IST) Time in India |
+  </div>
+</div>
+</section>
 
+<section class="tab-page" data-page="experience">
+  <hr />
+
+  <!-------------------------------------------->
+  <!--------------- Experience ---------------->
+  <!-------------------------------------------->
+  <h4><a name="experience">Experience</a></h4>
+
+  <div class="project xp">
+    <div class="xp-head">
+      <div class="project-title">
+        Applied Researcher, Parallel Execution Research
+        <span class="project-sub"><a class="myclass" href="https://supra.com" target="_blank">Supra</a></span>
+      </div>
+      <div class="xp-date">May 2022 – Present</div>
+    </div>
+    <p>
+      I lead research and engineering on parallel execution of blockchain transactions, focusing on
+      high-throughput deterministic execution for smart contract platforms and taking designs from
+      proof-of-concept to production.
+    </p>
+    <div class="xp-label">Core contributions</div>
+    <ul class="project-points">
+      <li>Co-designed <b>SupraBTM (iBTM)</b>, a Block Transactional Memory–based parallel execution engine
+        integrated in SupraEVM and SupraMoveVM, with ongoing work for Solana SVM (AFT 2025), currently the
+        fastest EVM executor.</li>
+      <li>Complexity analysis of parallel execution models (SSS 2025; extended in Theoretical Computer
+        Science, 2026).</li>
+      <li>Developed <b>SupraAdaptive</b>, a parallel execution engine that dynamically selects its execution
+        strategy based on workload characteristics and transaction contention patterns.</li>
+      <li>Parallel Jellyfish Merkle Tree construction, a flat storage design and an optimized Merkleization
+        pipeline for EVM blockchains.</li>
+      <li>Contributed to <b>SupraContainers</b>, enabling scalable execution environments for blockchain
+        workloads.</li>
+    </ul>
+    <div class="xp-label">Protocol research and exploration</div>
+    <ul class="project-points">
+      <li>Comparative studies of parallel execution models in Aptos, Solana, Monad, Sei and Sui.</li>
+      <li>Automation networks (Chainlink Automation, Gelato Network): decentralized task scheduling and
+        execution, for Supra's On-chain Automation.</li>
+      <li>Cosmos Inter-Blockchain Communication (IBC): cross-chain communication and interoperability.</li>
+      <li>Account Abstraction (EIP-4337): UserOperations, bundlers, paymasters and smart contract accounts,
+        and their implications for transaction validation and execution in the EVM.</li>
+    </ul>
+    <div class="xp-label">On-chain data analysis</div>
+    <ul class="project-points">
+      <li>Built pipelines to extract and analyze transaction-level data across multiple blockchain networks.</li>
+      <li>Large-scale analysis of contention patterns, execution behavior and parallelization opportunities
+        in historical Ethereum and Solana blocks.</li>
+    </ul>
+    <div class="project-links">
+      [<a class="myclass" href="#projects">Projects</a>]
+      [<a class="myclass" href="https://supra.com/research-team/parwat-singh/" target="_blank">Supra profile</a>]
+    </div>
+  </div>
+
+  <div class="project xp">
+    <div class="xp-head">
+      <div class="project-title">
+        Postdoctoral Researcher
+        <span class="project-sub">PDCRL Lab, Department of CSE,
+          <a class="myclass" href="https://iith.ac.in" target="_blank">IIT Hyderabad</a>, India</span>
+      </div>
+      <div class="xp-date">Jan 2022 – May 2022</div>
+    </div>
+    <p>
+      Worked with
+      <a class="myclass" href="http://www.iith.ac.in/~sathya_p/" target="_blank">Dr. Sathya Peri</a>
+      on parallel and distributed systems, supported by the Institute Postdoctoral Fellowship.
+    </p>
+    <ul class="project-points">
+      <li><b>DAG-based parallel scheduler for blockchains.</b> A scheduler module for concurrent execution
+        of smart contract transactions that captures their dependencies as a DAG, shares the DAG with
+        validators to save network-wide work, and includes a secure validator that detects incorrect DAGs
+        from malicious block producers. Implemented in Hyperledger Sawtooth, with a 1.58× average
+        improvement over serial execution.
+        [<a class="myclass" href="https://link.springer.com/chapter/10.1007/978-3-031-39698-4_13" target="_blank">Euro-Par 2023</a>]</li>
+      <li><b>Moving elements in a distributed geo-replicated tree.</b> An algorithm for concurrent move
+        operations on replicated trees that guarantees eventual consistency without coordination between
+        replicas, tolerates network partitions, and prevents cycles with a single compensation operation.
+        It achieves 14.6× to 68.19× speedup over the state of the art in geo-replicated settings.
+        [<a class="myclass" href="https://doi.org/10.1109/CLOUD55607.2022.00071" target="_blank">IEEE CLOUD 2022</a>]
+        [<a class="myclass" href="https://doi.org/10.1109/CCGRID54584.2022.00089" target="_blank">CCGrid 2022</a>]</li>
+      <li><b>Self-stabilizing low-stretch spanning trees.</b> BuildTree, a silent self-stabilizing protocol
+        that builds a spanning tree with low average stretch using Low Diameter Decomposition, the first
+        use of self-stabilization to make low-stretch tree constructions fault-tolerant.
+        [<a class="myclass" href="https://link.springer.com/chapter/10.1007/978-3-031-17436-0_9" target="_blank">NETYS 2022</a>]</li>
+    </ul>
+  </div>
+
+  <div class="project xp">
+    <div class="xp-head">
+      <div class="project-title">
+        Teaching Assistant
+        <span class="project-sub">Department of CSE,
+          <a class="myclass" href="https://iith.ac.in" target="_blank">IIT Hyderabad</a>, India</span>
+      </div>
+      <div class="xp-date">2017 – 2022</div>
+    </div>
+    <ul class="project-points">
+      <li><b>CS5320: Distributed Computing</b> — Spring 2021, 2020; Autumn 2018.</li>
+      <li><b>CS1303: Introduction to Programming Languages</b> — Autumn 2019.</li>
+      <li><b>CS5280: Concurrency Control in Transactional System</b> — Autumn 2021, 2019.</li>
+      <li><b>CS5300: Parallel and Concurrent Programming</b> — Autumn 2020; Spring 2019.</li>
+      <li><b>CS3523: Operating System 2</b> — Spring 2019, 2018.</li>
+      <li><b>CS5530: Basics of BlockChains: Distributed Computing Perspective</b> — Autumn 2018.</li>
+      <li><b>CS3510: Operating System 1</b> — Autumn 2018, Autumn 2017.</li>
+      <li><b>CS2323: Computer Architecture</b> — Autumn 2017.</li>
+    </ul>
+  </div>
+
+  <div class="project xp">
+    <div class="xp-head">
+      <div class="project-title">
+        Teaching Assistant
+        <span class="project-sub">School of Computer and Information Sciences,
+          <a class="myclass" href="https://uohyd.ac.in" target="_blank">University of Hyderabad</a>, India</span>
+      </div>
+      <div class="xp-date">2015 – 2016</div>
+    </div>
+    <ul class="project-points">
+      <li><b><a class="myclass" href="https://scis.uohyd.ac.in/~wankarcs/index_files/cc-15.html" target="_blank">CS773</a>: Grid and Cloud Computing</b> — Autumn 2016.</li>
+      <li><b><a class="myclass" href="https://scis.uohyd.ac.in/~wankarcs/pc-15.htm" target="_blank">CS751</a>: Parallel Computing</b> — Spring 2015.</li>
+    </ul>
+  </div>
+
+  <hr />
+</section>
+
+<section class="tab-page" data-page="education">
   <hr />
 
   <!---------------------------------------------------->
@@ -399,6 +522,39 @@
     </li>
   </ul>
 
+
+  <!----------------------------------->
+  <!-------- Achievements ------------>
+  <!----------------------------------->
+  <h4><a name="achievements">Achievements</a></h4>
+
+  <ul>
+
+    <li>
+        Awarded <b>Institute Postdoctoral Fellowship</b> for 6 months (February 2022 to July 2022) at
+        <a class="myclass" href="http://www.iith.ac.in/" target="_blank">IIT Hyderabad</a>.
+    </li>
+
+    <li>
+        Won <b>Best Poster Award</b> at the Doctoral Symposium (ICDCN 2019) for the poster
+        <i>Entitling Concurrency to Smart Contracts Using Optimistic Transactional Memory</i>.
+        [<a class="myclass" href="https://web.archive.org/web/2019/https://events.csa.iisc.ac.in/icdcn2019/index.htm" target="_blank">ICDCN 2019</a>]
+    </li>
+
+    <li>
+        Qualified <b>UGC NET (India)</b> – December 2015 for Lectureship.
+        [<a class="myclass" href="https://drive.google.com/file/d/0B_RkYuFRzOVuWUNOYTF4cEZ1Tmc/view" target="_blank">Score Card</a>]
+    </li>
+
+    <li>
+        Qualified <b>GATE (India)</b> for four consecutive years (2014–2017),
+        and awarded the <b>GATE Scholarship</b> for pursuing M.Tech (2014–2016).
+    </li>
+
+</ul>
+</section>
+
+<section class="tab-page" data-page="publications">
   <hr />
 
   <!-------------------------------------------->
@@ -770,7 +926,7 @@
     </button>
     
      <button class="buttonnew">
-        <a class="myclass" href="https://docs.supra.com/network/evm/supraevm-beta" target="_blank">
+        <a class="myclass" href="https://docs.supra.com/network/evm" target="_blank">
             <font color="white">Binary</font>
         </a>
     </button>
@@ -2337,153 +2493,150 @@ function abstractObjSCicdcn2019() {
 </li>
 </ul>
 
-<!----------------------------------->
-<!------Ongoing Projects------>
-<!----------------------------------->
-<h5>Recent Projects</h5>
-<b>Parallel Execution</b>
-<ul>
-    <li>
-        <b>Breaking the Merkleization Bottleneck</b> – Parallel Jellyfish Merkle Tree Construction for EVM Blockchains.
-    </li>
+</section>
 
-    <br/>
+<section class="tab-page" data-page="projects">
+  <hr />
 
-     <li>
-        <b>SupraAdaptive</b> – a high-throughput workload adaptive parallel execution engine powering 
-        Supra's Multi-VM (EVM, MoveVM and SVM) [<font color="#E80000"><b>Coming Soon</b></font>].
-     </li>
+  <!-------------------------------------------->
+  <!---------------- Projects ----------------->
+  <!-------------------------------------------->
+  <h4><a name="projects">Projects</a></h4>
 
-    <br/>
+  <div class="project">
+    <div class="project-title">
+      Breaking the Merkleization Bottleneck
+      <span class="project-sub">Parallel Jellyfish Merkle Tree Construction for EVM Blockchains</span>
+    </div>
+    <p>
+      After a block executes, its state updates must be committed to an authenticated
+      state tree and a new state root computed (Merkleization). As parallel execution makes
+      transaction processing faster, this step becomes a growing share of block processing
+      time on EVM blockchains. In this project, we study the
+      <b>Merkle Patricia Trie (MPT)</b> used by EVM chains and the
+      <b>Jellyfish Merkle Tree (JMT)</b>, the sparse, versioned Merkle tree originally built
+      for Aptos, and design a <b>parallel JMT</b> for EVM blockchains. We also introduced a
+      <b>flat storage</b> design for faster execution, and are optimizing the end-to-end
+      Merkleization pipeline, including storage-level optimizations such as
+      <b>sharded storage</b>, to further improve performance.
+    </p>
+  </div>
 
-    <li>
-        <b>SupraBTM (iBTM)</b> – a parallel execution engine powering Supra's execution engine.
-        [<a class="myclass" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.AFT.2025.29" target="_blank">AFT 2025 paper</a>]
-        [<a class="myclass" href="https://link.springer.com/chapter/10.1007/978-3-032-11127-2_6" target="_blank">SSS 2025 paper</a>]
-        [<a class="myclass" href="https://markets.businessinsider.com/news/currencies/coinbase-ventures-backed-supra-offers-1m-bounty-to-beat-its-parallel-evm-execution-engine-1035562499" target="_blank">$1M bounty news</a>]
-        [<a class="myclass" href="https://supra.com/academy/supra-parallel-execution-strategy/" target="_blank">Blog-Overview</a>]
-        [<a class="myclass" href="https://supra.com/academy/suprastm-parallel-smart-contract-execution/" target="_blank">Blog-SupraBTM</a>]
-    </li>
+  <div class="project">
+    <div class="project-title">
+      SupraAdaptive <span class="project-badge">Coming Soon</span>
+      <span class="project-sub">Workload-adaptive parallel execution engine</span>
+    </div>
+    <p>
+      A high-throughput parallel execution engine for Supra's Multi-VM (EVM, MoveVM and SVM)
+      that dynamically selects its execution strategy based on workload characteristics and
+      transaction contention patterns.
+    </p>
+  </div>
 
-    <br/>
-	
-    <li>
-        <b>SupraContainers</b> – containerized parallel execution and high-performance network.
-        [<a class="myclass" href="https://supra.com/documents/Supra-Containers-Whitepaper.pdf" target="_blank">Whitepaper</a>]
-        [<a class="myclass" href="https://supra.com/containers/" target="_blank">Project Page</a>]
-        [<a class="myclass" href="https://www.youtube.com/watch?v=hBNGw_JTaoQ" target="_blank">Talk1</a>]
-        [<a class="myclass" href="https://www.youtube.com/watch?v=epNzyTjPrk4" target="_blank">Talk2</a>]
-        [<a class="myclass" href="https://supra.com/news/supra-containers/" target="_blank">Blog</a>]
-    </li>
+  <div class="project">
+    <div class="project-title">
+      SupraBTM (iBTM)
+      <span class="project-sub">Block Transactional Memory–based parallel execution engine</span>
+    </div>
+    <p>
+      SupraBTM executes the transactions of a block in parallel on multicore validators
+      while guaranteeing the same result as sequential execution. Unlike plain STM
+      approaches such as Block-STM, it leverages the <b>conflict specifications</b> of
+      transactions to schedule them and avoid wasted re-execution. It is integrated into
+      both <b>SupraEVM</b> and <b>SupraMoveVM</b>, with ongoing work for Solana SVM, and is
+      currently the fastest EVM executor.
+    </p>
+    <ul class="project-points">
+      <li>On historical workloads, iBTM reaches up to <b>2.43×</b> speedup over sequential
+        execution. On synthetic workloads, it achieves up to <b>1.75×</b> over sequential and up to
+        <b>1.33×</b> over the state-of-the-art Parallel-EVM (PEVM), averaging <b>1.24×</b> over PEVM
+        (AFT 2025).</li>
+      <li>Complexity study of block transactional memory at SSS 2025, extended in
+        Theoretical Computer Science (2026).</li>
+      <li>Backed by a <b>$1M open challenge</b> to beat its performance, covered widely by
+        crypto and financial news outlets.</li>
+    </ul>
+    <div class="project-links">
+      [<a class="myclass" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.AFT.2025.29" target="_blank">AFT 2025 paper</a>]
+      [<a class="myclass" href="https://link.springer.com/chapter/10.1007/978-3-032-11127-2_6" target="_blank">SSS 2025 paper</a>]
+      [<a class="myclass" href="https://www.sciencedirect.com/science/article/pii/S0304397526004706?dgcid=author" target="_blank">TCS 2026 paper</a>]
+      [<a class="myclass" href="https://hub.supra.com/evm-speed-challenge" target="_blank">$1M challenge</a>]
+      [<a class="myclass" href="https://decrypt.co/348703/coinbase-ventures-backed-supra-offers-1m-bounty-to-beat-its-parallel-evm-execution-engine" target="_blank">$1M challenge news</a>]
+      [<a class="myclass" href="https://supra.com/academy/supra-parallel-execution-strategy/" target="_blank">Blog-Overview</a>]
+      [<a class="myclass" href="https://supra.com/academy/suprastm-parallel-smart-contract-execution/" target="_blank">Blog-SupraBTM</a>]
+    </div>
+  </div>
 
-    <br/>
-	
-    <li>
-        <b>Historical Conflict Analysis of Blockchain Transactions</b>, large-scale empirical study of Ethereum
-        and Solana read–write conflicts, parallelism and execution bottlenecks.
-        [<a class="myclass" href="https://arxiv.org/abs/2505.05358" target="_blank">arXiv:2505.05358</a>]
-    </li>
+  <div class="project">
+    <div class="project-title">
+      Historical Conflict Analysis of Blockchain Transactions
+      <span class="project-sub">Ethereum and Solana, a historical perspective</span>
+    </div>
+    <p>
+      A large-scale empirical study of transaction conflicts and the maximum theoretical
+      parallelism in historical blocks of <b>Ethereum</b> and <b>Solana</b>, built on pipelines
+      that extract transaction-level read–write data. It is the first study to use historical
+      transactional workloads to evaluate conflict patterns, giving an empirical basis for
+      designing parallel execution engines.
+    </p>
+    <ul class="project-points">
+      <li>In more than half of historical Ethereum blocks, over 50% of transactions are independent.</li>
+      <li>Solana blocks contain much longer conflict chains on average (~58% vs ~18% in Ethereum),
+        reflecting fundamentally different parallel execution dynamics.</li>
+    </ul>
+    <div class="project-links">
+      [<a class="myclass" href="https://arxiv.org/abs/2505.05358" target="_blank">arXiv:2505.05358</a>]
+    </div>
+  </div>
+  <div class="project">
+    <div class="project-title">
+      SupraContainers
+      <span class="project-sub">Containerized parallel execution and high-performance network</span>
+    </div>
+    <p>
+      Supra Containers bring AppChains onto the Supra Layer 1. A Container is a bundle of smart
+      contracts with its own gas token and gas pricing, gated contract deployment and execution-space
+      auctions, while keeping <b>atomic composability</b> across Containers, so liquidity is not
+      fragmented the way it is across separate AppChains and Layer 2s.
+    </p>
+    <p>
+      From the execution point of view, a Container acts as a lightweight <b>access specification</b>:
+      it sits between access-oblivious transactions (Ethereum, Aptos) and full read/write sets
+      (Solana, Sui), without adding any data to transactions. Transactions within different Containers
+      do not conflict, so per-Container batches run in parallel with the
+      <b>Supra work-sharing queue (Supra-WSQ)</b> scheduler. Each batch executes in order on one core,
+      avoiding the aborts and re-executions of speculative approaches, while cross-Container
+      transactions can be batched and run with STM or dependency-graph techniques.
+    </p>
+    <ul class="project-points">
+      <li>About <b>6×</b> speedup over sequential execution across synthetic workloads. It outperforms
+        Block-STM and SeaLevel under high contention and matches them under moderate or low contention.</li>
+      <li>On historical Solana blocks, about <b>3.4k tps</b> vs. about 642 tps for Block-STM and
+        1.5k tps for SeaLevel (50 consecutive blocks).</li>
+    </ul>
+    <div class="project-links">
+      [<a class="myclass" href="https://supra.com/documents/Supra-Containers-Whitepaper.pdf" target="_blank">Whitepaper</a>]
+      [<a class="myclass" href="https://supra.com/containers/" target="_blank">Project Page</a>]
+      [<a class="myclass" href="https://www.youtube.com/watch?v=hBNGw_JTaoQ" target="_blank">Talk1</a>]
+      [<a class="myclass" href="https://www.youtube.com/watch?v=epNzyTjPrk4" target="_blank">Talk2</a>]
+      [<a class="myclass" href="https://supra.com/news/supra-containers/" target="_blank">Blog</a>]
+    </div>
+  </div>
 
 
-</ul>
-<hr/>
+  <hr />
+</section>
 
-
-  <!-- =========================================================
-       === Association / Services / Achievements sections ======
-       ========================================================= -->
-
-  <!----------------------------------->
-  <!---------- Association -------->
-  <!----------------------------------->
-  <h4><a name="association" marked="1">Research Association</a></h4>
-
-<p>
-I am very fortunate to collaborate with outstanding researchers, mentors, and colleagues whose guidance,
-insights, and discussions have significantly shaped my work in distributed systems, transactional memory,
-and high-performance blockchain execution.
-</p>
-
-<ul>
-    <li>
-        <a class="myclass" href="https://sites.usc.edu/srivatsr/" target="_blank"> Dr./Prof. Srivatsan Ravi</a>, Senior Principal Researcher at Supra and Professor at University of Southern California, USA.
-    </li>
-
-    <li>
-        <a class="myclass" href="https://supra.com/research-team/raghavendra/" target="_blank"> Dr. Raghavendra Ramesh</a>, VP of R&D at Supra.
-    </li>
-
-    <li>
-        <a class="myclass" href="https://supra.com/research-team/" target="_blank"> Joshua Tobkin (Josh)</a>, CEO at Supra.
-    </li>
-    
-    <li>
-        <a class="myclass" href="https://www.iith.ac.in/~sathya_p/" target="_blank"> Prof. Sathya Peri</a>, Indian Institute of Technology Hyderabad, India.
-    </li>
-
-    <li>
-        <a class="myclass" href="https://scis.uohyd.ac.in/~wankarcs/" target="_blank"> Prof. Rajeev Wankar</a>, University of Hyderabad, India.
-    </li>
-
-    <li>
-        <a class="myclass" href="http://dcis.uohyd.ac.in/People/profile/crr_profile.php" target="_blank">Prof. C. Raghavendra Rao</a>, University of Hyderabad, India.
-    </li>
-
-    <li>
-        <a class="myclass" href="https://snu.edu.in/faculty/archit-somani/" target="_blank">Dr./Prof. Archit Somani</a>, Shiv Nadar University, India.
-    </li>
-
-    <li>
-        <a class="myclass" href="https://snu.edu.in/faculty/sweta-kumari/" target="_blank">Dr./Prof. Sweta Kumari</a>, Shiv Nadar University, India.
-    </li>
-</ul>
-
-<hr/>
-
-
-  <!----------------------------------------------------->
-  <!-- Achievements and Services Anchor -->
-  <!------------------------------------------------------>
-  <h4><a name="services" marked="1">Achievements and Services</a></h4>
-
-  <!-- New explicit anchor so #achievements works -->
-  <a name="achievements"></a>
-
-  <!----------------------------------->
-  <!-------- Achievements ------------>
-  <!----------------------------------->
-  <h5>Achievements</h5>
-
-  <ul>
-
-    <li>
-        Awarded <b>Institute Postdoctoral Fellowship</b> for 6 months (February 2022 to July 2022) at
-        <a class="myclass" href="http://www.iith.ac.in/" target="_blank">IIT Hyderabad</a>.
-    </li>
-
-    <li>
-        Won <b>Best Poster Award</b> at the Doctoral Symposium (ICDCN 2019) for the poster
-        <i>Entitling Concurrency to Smart Contracts Using Optimistic Transactional Memory</i>.
-        [<a class="myclass" href="https://events.csa.iisc.ac.in/icdcn2019/index.htm" target="_blank">ICDCN 2019</a>]
-    </li>
-
-    <li>
-        Qualified <b>UGC NET (India)</b> – December 2015 for Lectureship.
-        [<a class="myclass" href="https://drive.google.com/file/d/0B_RkYuFRzOVuWUNOYTF4cEZ1Tmc/view" target="_blank">Score Card</a>]
-    </li>
-
-    <li>
-        Qualified <b>GATE (India)</b> for four consecutive years (2014–2017),
-        and awarded the <b>GATE Scholarship</b> for pursuing M.Tech (2014–2016).
-    </li>
-
-</ul>
-
+<section class="tab-page" data-page="services">
+  <hr />
 
   <!----------------------------------->
   <!----------- Services ------------->
   <!----------------------------------->
-  <h5>Services</h5>
+  <h4><a name="services">Services</a></h4>
+
+  <h5>Talks and Activities</h5>
   <ul>
 
     <li>
@@ -2558,126 +2711,104 @@ and high-performance blockchain execution.
   <!----------- Reviewer ---------->
   <!----------------------------------->
   <h5>Technical Program Committee (TPC) Member</h5>
+  <ul class="svc-list">
+    <li><b>CCS</b> – ACM Conference on Computer and Communications Security: <a class="myclass" href="https://www.sigsac.org/ccs/CCS2026/" target="_blank">2026</a> (Demo PC)</li>
+    <li><b>MARBLE</b> – International Conference on Mathematical Research for Blockchain Economy: <a class="myclass" href="https://www.marble-conference.org/marble2026" target="_blank">2026</a></li>
+    <li><b>AFT</b> – Advances in Financial Technologies: <a class="myclass" href="https://aft.ifca.ai/aft26/index.html" target="_blank">2026</a></li>
+    <li><b>ICBC</b> – IEEE International Conference on Blockchain and Cryptocurrency: <a class="myclass" href="https://icbc2024.ieee-icbc.org/committees/technical-committee" target="_blank">2024</a> (Invited TPC)</li>
+    <li><b>BIOTC</b> – Blockchain and Internet of Things Conference: <a class="myclass" href="https://www.biotc.net/" target="_blank">2026</a>, <a class="myclass" href="https://www.biotc.net/biotc2025.html" target="_blank">2025</a>, <a class="myclass" href="https://www.biotc.net/biotc2024.html" target="_blank">2024</a>, <a class="myclass" href="https://www.biotc.net/biotc2023.html" target="_blank">2023</a></li>
+  </ul>
 
-  <div>
-<ul class="multi-column">
-    <li><a class="myclass" href="https://www.sigsac.org/ccs/CCS2026/" target="_blank">ACM Conference on Computer and Communications Security – CCS 2026 (Demo PC)</a></li>
-    <li><a class="myclass" href="https://www.marble-conference.org/" target="_blank">International Conference on Mathematical Research for Blockchain Economy – MARBLE 2026</a></li>
-    <li><a class="myclass" href="https://aft.ifca.ai/aft26/index.html" target="_blank">Advances in Financial Technologies – AFT 2026</a></li>
-    <li><a class="myclass" href="https://icbc2024.ieee-icbc.org/committees/technical-committee" target="_blank">IEEE ICBC 2024 – International Conference on Blockchain and Cryptocurrency (Invited TPC)</a></li>
-    <li><a class="myclass" href="https://biotc.org/" target="_blank">BIOTC 2023, 2024, 2025, 2026 – Blockchain and Internet of Things Conference</a></li>
-</ul>
-</div>
-
-  <h5>(Sub)Reviewer for the Conferences/Journals</h5>
-
-  <div>
-<ul class="multi-column">
-
-    <!-- Journals -->
-    <li><a class="myclass" href="https://www.springer.com/journal/10257" target="_blank">ISeB (Journal)</a></li>
-    <li><a class="myclass" href="https://www.springer.com/journal/236" target="_blank">Acta Informatica (Journal)</a></li>
-    <li><a class="myclass" href="https://onlinelibrary.wiley.com/journal/10991190" target="_blank">IJNM (Journal)</a></li>
-    <li><a class="myclass" href="https://onlinelibrary.wiley.com/journal/15320626" target="_blank">CCPE – Concurrency and Computation: Practice and Experience (Journal)</a></li>
-    <li><a class="myclass" href="https://www.sciencedirect.com/journal/expert-systems-with-applications" target="_blank">Expert Systems with Applications (Journal)</a></li>
-    <li><a class="myclass" href="https://www.sciencedirect.com/journal/computer-networks" target="_blank">Computer Networks (Journal)</a></li>
-    <li><a class="myclass" href="https://ieeeaccess.ieee.org/" target="_blank">IEEE Access (Journal)</a></li>
-    <li><a class="myclass" href="https://www.sciencedirect.com/journal/blockchain-research-and-applications" target="_blank">Blockchain: Research and Applications (Journal)</a></li>
-    <li><a class="myclass" href="https://journals-sol.sbc.org.br/index.php/jisa" target="_blank">JISA – Journal of Internet Services and Applications (Journal)</a></li>
-    <br/>
-    <!-- Conferences -->
-    <li><a class="myclass" href="https://cyprusconferences.org/sirocco2027/" target="_blank">SIROCCO 2027</a></li>
-    <li><a class="myclass" href="https://crypto.unibe.ch/fc25/offline.php" target="_blank">Financial Cryptography (FC 2025)</a></li>
-    <li><a class="myclass" href="https://icdcit.ac.in/" target="_blank">ICDCIT 2021, 2020, 2019</a></li>
-    <li><a class="myclass" href="https://cods-comad.in/" target="_blank">CoDS-COMAD 2021, 2020, 2019</a></li>
-    <li><a class="myclass" href="https://www.comsnets.org/archive/2019/poster_session.html" target="_blank">COMSNETS Poster Track 2019</a></li>
-    <li><a class="myclass" href="https://events.csa.iisc.ac.in/icdcn2019/index.htm" target="_blank">ICDCN 2021, 2020, 2019</a></li>
-    <li><a class="myclass" href="http://cds.iisc.ac.in/faculty/simmhan/conf/indosys-2019/" target="_blank">IndoSys 2019</a></li>
-
-</ul>
-</div>
+  <h5>(Sub)Reviewer for Conferences and Journals</h5>
+  <div class="xp-label">Conferences</div>
+  <ul class="svc-list">
+    <li><b>SIROCCO</b> – International Colloquium on Structural Information and Communication Complexity: <a class="myclass" href="https://cyprusconferences.org/sirocco2027/" target="_blank">2027</a></li>
+    <li><b>FC</b> – Financial Cryptography and Data Security: <a class="myclass" href="https://fc25.ifca.ai/" target="_blank">2025</a></li>
+    <li><b>ICDCN</b> – International Conference on Distributed Computing and Networking: <a class="myclass" href="https://www.icdcn2021.net/" target="_blank">2021</a>, <a class="myclass" href="http://www.icdcn2020.rf.gd/?i=1" target="_blank">2020</a>, <a class="myclass" href="https://web.archive.org/web/2019/https://events.csa.iisc.ac.in/icdcn2019/index.htm" target="_blank">2019</a></li>
+    <li><b>ICDCIT</b> – International Conference on Distributed Computing and Internet Technology: <a class="myclass" href="https://web.archive.org/web/20210125062209/https://icdcit.ac.in/" target="_blank">2021</a>, <a class="myclass" href="https://web.archive.org/web/20191230072244/http://www.icdcit.ac.in/" target="_blank">2020</a>, <a class="myclass" href="https://web.archive.org/web/20190104213234/http://icdcit.ac.in/" target="_blank">2019</a></li>
+    <li><b>CoDS-COMAD</b> – ACM India Joint International Conference on Data Science and Management of Data: <a class="myclass" href="https://ikdd.acm.org/cods-comad/2021/" target="_blank">2021</a>, <a class="myclass" href="https://ikdd.acm.org/cods-comad/2020/" target="_blank">2020</a>, <a class="myclass" href="https://ikdd.acm.org/cods-comad/2019/" target="_blank">2019</a></li>
+    <li><b>COMSNETS</b> – International Conference on Communication Systems and Networks: <a class="myclass" href="https://www.comsnets.org/archive/2019/poster_session.html" target="_blank">2019</a> (Poster Track)</li>
+    <li><b>IndoSys</b> – Indian Symposium on Computer Systems: <a class="myclass" href="http://cds.iisc.ac.in/faculty/simmhan/conf/indosys-2019/" target="_blank">2019</a></li>
+  </ul>
+  <div class="xp-label">Journals</div>
+  <ul class="svc-list">
+    <li><b>ISeB</b> – <a class="myclass" href="https://www.springer.com/journal/10257" target="_blank">Information Systems and e-Business Management</a></li>
+    <li><a class="myclass" href="https://www.springer.com/journal/236" target="_blank">Acta Informatica</a></li>
+    <li><b>IJNM</b> – <a class="myclass" href="https://onlinelibrary.wiley.com/journal/10991190" target="_blank">International Journal of Network Management</a></li>
+    <li><b>CCPE</b> – <a class="myclass" href="https://onlinelibrary.wiley.com/journal/15320626" target="_blank">Concurrency and Computation: Practice and Experience</a></li>
+    <li><b>ESWA</b> – <a class="myclass" href="https://www.sciencedirect.com/journal/expert-systems-with-applications" target="_blank">Expert Systems with Applications</a></li>
+    <li><a class="myclass" href="https://www.sciencedirect.com/journal/computer-networks" target="_blank">Computer Networks</a></li>
+    <li><a class="myclass" href="https://ieeeaccess.ieee.org/" target="_blank">IEEE Access</a></li>
+    <li><b>BCRA</b> – <a class="myclass" href="https://www.sciencedirect.com/journal/blockchain-research-and-applications" target="_blank">Blockchain: Research and Applications</a></li>
+    <li><b>JISA</b> – <a class="myclass" href="https://journals-sol.sbc.org.br/index.php/jisa" target="_blank">Journal of Internet Services and Applications</a></li>
+  </ul>
 
 
   <!----------------------------------->
   <!----------- Teaching ---------->
   <!----------------------------------->
-  <h5>Teaching Assistant</h5>
 
-  <ul>
-
-    <li>
-        <b>CS5320: Distributed Computing</b>, IIT Hyderabad --
-        Spring 2021, 2020; Autumn 2018.
-    </li>
-
-    <li>
-        <b>CS1303: Introduction to Programming Languages</b>,
-        IIT Hyderabad – Autumn 2019.
-    </li>
-
-    <li>
-        <b>CS5280: Concurrency Control in Transactional System</b>,
-        IIT Hyderabad – Autumn 2021, 2019.
-    </li>
-
-    <li>
-        <b>CS5300: Parallel and Concurrent Programming</b>,
-        IIT Hyderabad – Autumn 2020; Spring 2019.
-    </li>
-
-    <li>
-        <b>CS3523: Operating System 2</b>,
-        IIT Hyderabad – Spring 2019, 2018.
-    </li>
-
-    <li>
-        <b>CS5530: Basics of BlockChains: Distributed Computing Perspective</b>,
-        IIT Hyderabad – Autumn 2018.
-    </li>
-
-    <li>
-        <b>CS3510: Operating System 1</b>,
-        IIT Hyderabad – Autumn 2018, Autumn 2017.
-    </li>
-
-    <li>
-        <b>CS2323: Computer Architecture</b>,
-        IIT Hyderabad – Autumn 2017.
-    </li>
-
-    <li>
-        <b>
-            <a class="myclass"
-               href="https://scis.uohyd.ac.in/~wankarcs/index_files/cc-15.html"
-               target="_blank">
-               CS773
-            </a>: Grid and Cloud Computing
-        </b>,
-        SCIS, University of Hyderabad – Autumn 2016.
-    </li>
-
-    <li>
-        <b>
-            <a class="myclass"
-               href="https://scis.uohyd.ac.in/~wankarcs/pc-15.htm"
-               target="_blank">
-               CS751
-            </a>: Parallel Computing
-        </b>,
-        SCIS, University of Hyderabad – Spring 2015.
-    </li>
-</ul>
 
 
   <hr />
+</section>
+
+<section class="tab-page" data-page="association">
+<hr/>
+
+
+  <!-- =========================================================
+       === Association / Services / Achievements sections ======
+       ========================================================= -->
+
+  <!----------------------------------->
+  <!---------- Association -------->
+  <!----------------------------------->
+  <h4><a name="association" marked="1">Research Association</a></h4>
+
+<p>
+I am very fortunate to collaborate with outstanding researchers, mentors, and colleagues whose guidance,
+insights, and discussions have significantly shaped my work in distributed systems, transactional memory,
+and high-performance blockchain execution.
+</p>
+
+<ul>
+    <li>
+        <a class="myclass" href="https://sites.usc.edu/srivatsr/" target="_blank"> Dr./Prof. Srivatsan Ravi</a>, Senior Principal Researcher at Supra and Professor at University of Southern California, USA.
+    </li>
+
+    <li>
+        <a class="myclass" href="https://supra.com/research-team/raghavendra/" target="_blank"> Dr. Raghavendra Ramesh</a>, VP of R&D at Supra.
+    </li>
+
+    <li>
+        <a class="myclass" href="https://supra.com/research-team/" target="_blank"> Joshua Tobkin (Josh)</a>, CEO at Supra.
+    </li>
+    
+    <li>
+        <a class="myclass" href="https://www.iith.ac.in/~sathya_p/" target="_blank"> Prof. Sathya Peri</a>, Indian Institute of Technology Hyderabad, India.
+    </li>
+
+    <li>
+        <a class="myclass" href="https://scis.uohyd.ac.in/~wankarcs/" target="_blank"> Prof. Rajeev Wankar</a>, University of Hyderabad, India.
+    </li>
+
+    <li>
+        <a class="myclass" href="http://dcis.uohyd.ac.in/People/profile/crr_profile.php" target="_blank">Prof. C. Raghavendra Rao</a>, University of Hyderabad, India.
+    </li>
+
+    <li>
+        <a class="myclass" href="https://snu.edu.in/faculty/archit-somani/" target="_blank">Dr./Prof. Archit Somani</a>, Shiv Nadar University, India.
+    </li>
+
+    <li>
+        <a class="myclass" href="https://snu.edu.in/faculty/sweta-kumari/" target="_blank">Dr./Prof. Sweta Kumari</a>, Shiv Nadar University, India.
+    </li>
+</ul>
+</section>
 </main>
 
-<div
-  style="text-align:left; margin-top:20px; font-family:Arial, sans-serif;"
->
-  <div style="font-size:11px; color:#333;">
-    | Last modified: 23:23, Wednesday, November 25 2026 (IST) Time in India |
-  </div>
-</div>
+<script src="AnjanaPS_files/tabs.js"></script>
+
 </body>
 </html>

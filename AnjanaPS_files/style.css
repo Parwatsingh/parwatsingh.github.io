@@ -108,21 +108,23 @@ h5 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-top: 2.6rem;
+  margin-top: 2rem;
 }
 
 h6 { font-size: 1.5rem; line-height: 1.6; }
 
-p { margin-top: 0; }
+p { margin-top: 0; margin-bottom: 0.8rem; }
 
 hr {
   border: 0;
   border-top: 1px solid var(--border);
-  margin: 3rem 0 1rem 0;
+  margin: 2rem 0 1rem 0;
 }
 
 ul { padding-left: 2.2rem; }
-li { margin-bottom: 0.4rem; }
+li { margin-bottom: 0.7rem; }
+/* the <br/> spacers between list items made full blank lines; li margin spaces them instead */
+ul > br { display: none; }
 li::marker { color: var(--muted); }
 
 b, strong { font-weight: 600; }
@@ -366,17 +368,27 @@ a:active { color: var(--highlight); }
 .hero-right h1 { margin: 0 0 0.6rem 0; line-height: 1.15; }
 
 /* affiliation block under the name */
-.hero-right h5 {
+.hero-info {
   font-family: var(--sans);
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-  line-height: 1.7;
+  font-size: 1.65rem;
+  line-height: 1.5;
   color: var(--muted);
-  margin: 0;
 }
-.hero-right h5 b { color: var(--text); }
+.hero-info b { color: var(--text); font-weight: 600; }
+.hero-role {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+.hero-line { margin-bottom: 0.3rem; }
+.hero-meta { font-size: 1.55rem; }
+.hero-info .nowrap { white-space: nowrap; }
+/* narrow desktop: text column is tightest here */
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .hero-info { font-size: 1.5rem; }
+  .hero-role { font-size: 1.75rem; }
+  .hero-meta { font-size: 1.45rem; }
+  .hero-info .nowrap { white-space: normal; }
+}
 
 /* Profile Photo RESPONSIVE */
 .profile-photo {
@@ -414,7 +426,7 @@ a:active { color: var(--highlight); }
 }
 
 .icon-row img {
-  height: 26px;
+  height: 22px;
   width: auto;
   display: block;
 }
@@ -583,11 +595,11 @@ a:active { color: var(--highlight); }
     justify-self: center;
   }
 
-  .icon-row img { height: 24px; }
+  .icon-row img { height: 21px; }
 }
 
 @media (max-width: 480px) {
-  .icon-row img { height: 22px; }
+  .icon-row img { height: 20px; }
 }
 
 /********************************************
@@ -623,3 +635,132 @@ a:active { color: var(--highlight); }
   cursor: pointer;
 }
 .theme-btn:hover { border-color: var(--accent); }
+
+/********************************************
+ * RECENT! — slow vertical ticker
+ ********************************************/
+.recent-ticker {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  /* soft fade at the top and bottom edges */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 7%, #000 93%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+.recent-track ul {
+  margin: 0;
+  padding-bottom: 2rem;   /* gap before the list repeats */
+}
+.recent-ticker.is-moving .recent-track {
+  animation: recent-scroll var(--recent-dur, 60s) linear infinite;
+}
+/* pause while reading or tabbing through links */
+.recent-ticker:hover .recent-track,
+.recent-ticker:focus-within .recent-track {
+  animation-play-state: paused;
+}
+@keyframes recent-scroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+/* no motion: plain scrollable box */
+.recent-ticker.is-static {
+  overflow-y: auto;
+  -webkit-mask-image: none;
+          mask-image: none;
+}
+@media (max-width: 768px) {
+  .recent-ticker { height: 360px; }
+}
+
+/********************************************
+ * TABS — one section shown at a time (tabs.js)
+ ********************************************/
+.tabs-js .tab-page { display: none; }
+.tabs-js .tab-page.is-active { display: block; }
+/* each tab starts with a divider meant for the long page; not needed as a tab */
+.tabs-js .tab-page > hr:first-child { display: none; }
+.tabs-js .tab-page:not([data-page="home"]) { padding-top: 12px; }
+
+.topnav a.current,
+.topnav a.current:link,
+.topnav a.current:visited {
+  color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/********************************************
+ * PROJECTS tab
+ ********************************************/
+.project {
+  padding: 14px 0 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.project:last-of-type { border-bottom: 0; }
+.project-title {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.project-sub {
+  display: block;
+  font-family: var(--sans);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.project p { margin-bottom: 0.6rem; }
+.project-points { margin-bottom: 0.6rem; }
+.project-points li { margin-bottom: 0.3rem; }
+.project-links { margin-bottom: 0.8rem; }
+.project-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  padding: 1px 8px;
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #c0262d;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+/* Services tab: light divider above each sub-section after the first */
+[data-page="services"] h5:not(:first-of-type) {
+  border-top: 1px solid var(--border);
+  padding-top: 1.6rem;
+}
+
+/* Experience tab */
+.xp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+.xp-date {
+  flex: none;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.xp-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 1.6rem 0 0.4rem 0;
+}
+@media (max-width: 600px) {
+  .xp-head { flex-direction: column; gap: 0; }
+  .xp-date { margin-bottom: 0.4rem; }
+}
+
+/* Services: TPC / reviewer lists */
+.svc-list li { margin-bottom: 0.45rem; }
