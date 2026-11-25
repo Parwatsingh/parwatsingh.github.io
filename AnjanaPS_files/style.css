@@ -345,8 +345,11 @@ a:active { color: var(--highlight); }
  * HERO SECTION — photo | details | Scholar card
  ********************************************/
 .hero {
+  /* photo and Scholar card share exactly this box (photo is 2074x1788 ≈ 290x250) */
+  --hero-box-w: 290px;
+  --hero-box-h: 250px;
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr) 290px;
+  grid-template-columns: var(--hero-box-w) minmax(0, 1fr) var(--hero-box-w);
   column-gap: 28px;
   row-gap: 18px;
   align-items: stretch;
@@ -377,9 +380,11 @@ a:active { color: var(--highlight); }
 
 /* Profile Photo RESPONSIVE */
 .profile-photo {
-  /* full photo, never cropped: fixed height, natural width */
-  height: 250px;
-  width: auto;
+  /* same box as the Scholar card; aspect matches the photo, so nothing is cropped */
+  box-sizing: border-box;
+  width: var(--hero-box-w);
+  height: var(--hero-box-h);
+  object-fit: cover;
   display: block;
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -417,7 +422,10 @@ a:active { color: var(--highlight); }
 /* ---------- Google Scholar "Cited by" card ---------- */
 .hero-stats {
   box-sizing: border-box;
-  width: 100%;
+  width: var(--hero-box-w);
+  height: var(--hero-box-h);
+  align-self: start;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 10px 14px 8px 14px;
@@ -543,14 +551,11 @@ a:active { color: var(--highlight); }
 /* Tablet: card moves under the details, next to nothing else */
 @media (max-width: 1000px) {
   .hero {
-    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-columns: var(--hero-box-w) minmax(0, 1fr);
   }
-  .profile-photo { height: 200px; }
   .hero-stats {
     grid-column: 2;
-    max-width: 420px;
   }
-  .gs-plot { min-height: 80px; }
 }
 
 /* Phone: single column, photo centred, everything same width */
@@ -562,13 +567,20 @@ a:active { color: var(--highlight); }
 
   .hero-left { justify-self: center; }
 
-  .profile-photo { height: auto; width: 100%; max-width: 340px; }
+  /* photo and card: same width, same 290:250 shape */
+  .profile-photo,
+  .hero-stats {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 290 / 250;
+  }
 
   .hero-right h1 { font-size: 2.8rem; text-align: center; }
 
   .hero-stats {
     grid-column: 1;
-    max-width: none;
+    justify-self: center;
   }
 
   .icon-row img { height: 24px; }
