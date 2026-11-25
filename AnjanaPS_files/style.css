@@ -772,3 +772,11 @@ a:active { color: var(--highlight); }
 
 /* Services: TPC / reviewer lists */
 .svc-list li { margin-bottom: 0.45rem; }
+
+/* HOME is the blue block at the left: keep its text white when it's the open tab */
+.topnav a.active.current,
+.topnav a.active.current:link,
+.topnav a.active.current:visited {
+  color: #ffffff;
+  box-shadow: inset 0 -3px 0 rgba(255, 255, 255, 0.75);
+}

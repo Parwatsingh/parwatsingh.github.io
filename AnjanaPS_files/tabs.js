@@ -46,7 +46,7 @@
   function revealCurrent() {
     if (!strip || strip.scrollWidth <= strip.clientWidth) return updateFades();
     var a = strip.querySelector("a.current");
-    if (!a) return;
+    if (!a) return updateFades(); // HOME lives outside the strip
     var left = a.offsetLeft - strip.offsetLeft;
     var right = left + a.offsetWidth;
     var pad = 32; // clear the faded edge
