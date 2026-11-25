@@ -16,6 +16,37 @@
     return null;
   }
 
+  // Small screens: the tab links sit in a strip that scrolls sideways.
+  var strip = document.querySelector(".topnav-tabs");
+
+  function updateFades() {
+    if (!strip) return;
+    var max = strip.scrollWidth - strip.clientWidth;
+    strip.classList.toggle("scrolled", strip.scrollLeft > 2);
+    strip.classList.toggle("at-end", strip.scrollLeft >= max - 2);
+  }
+
+  // Slide the strip (only the strip, not the page) so the current tab is fully visible.
+  function revealCurrent() {
+    if (!strip || strip.scrollWidth <= strip.clientWidth) return updateFades();
+    var a = strip.querySelector("a.current");
+    if (!a) return;
+    var left = a.offsetLeft - strip.offsetLeft;
+    var right = left + a.offsetWidth;
+    var pad = 32; // clear the faded edge
+    if (left - pad < strip.scrollLeft) strip.scrollLeft = Math.max(0, left - pad);
+    else if (right + pad > strip.scrollLeft + strip.clientWidth) strip.scrollLeft = right + pad - strip.clientWidth;
+    updateFades();
+  }
+
+  if (strip) {
+    strip.addEventListener("scroll", updateFades, { passive: true });
+    window.addEventListener("resize", revealCurrent);
+    // tab widths change once the web font arrives; measure again then
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(revealCurrent);
+    window.addEventListener("load", revealCurrent);
+  }
+
   function show(hash, scroll) {
     var name = (hash || "").replace(/^#/, "");
     var page = pageByName(name);
@@ -34,6 +65,7 @@
       a.classList.toggle("current", a.getAttribute("data-tab") === current);
     });
 
+    revealCurrent();
     document.dispatchEvent(new CustomEvent("tabchange", { detail: current }));
 
     if (scroll) {

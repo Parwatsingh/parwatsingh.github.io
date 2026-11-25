@@ -34,7 +34,6 @@
   <!-- Local scripts -->
   <script async src="./AnjanaPS_files/analytics.js"></script>
   <script>document.documentElement.classList.add("tabs-js");</script>
-  <script src="AnjanaPS_files/tnav.js"></script>
   <script src="AnjanaPS_files/scholar.js"></script>
   <script defer src="AnjanaPS_files/scholar-card.js"></script>
   <script defer src="AnjanaPS_files/recent-ticker.js"></script>
@@ -52,17 +51,16 @@
       <span style="color:white">@ANJANA</span>
     </a>
 
-    <!-- Internal anchors -->
-    <a href="#home" data-tab="home" onclick="closeMenu()">HOME</a>
-    <a href="#experience" data-tab="experience" onclick="closeMenu()">EXPERIENCE</a>
-    <a href="#education" data-tab="education" onclick="closeMenu()">EDUCATION &amp; ACHIEVEMENTS</a>
-    <a href="#publications" data-tab="publications" onclick="closeMenu()">PUBLICATIONS</a>
-    <a href="#projects" data-tab="projects" onclick="closeMenu()">PROJECTS</a>
-    <a href="#services" data-tab="services" onclick="closeMenu()">SERVICES</a>
-    <a href="#association" data-tab="association" onclick="closeMenu()">ASSOCIATION</a>
-
-    <!-- Hamburger icon for mobile -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#19977</a>
+    <!-- Tabs: one row on desktop, a sideways-scrolling strip on small screens -->
+    <nav class="topnav-tabs" aria-label="Sections">
+      <a href="#home" data-tab="home">HOME</a>
+      <a href="#experience" data-tab="experience">EXPERIENCE</a>
+      <a href="#education" data-tab="education">EDUCATION<span class="nav-long"> &amp; ACHIEVEMENTS</span></a>
+      <a href="#publications" data-tab="publications">PUBLICATIONS</a>
+      <a href="#projects" data-tab="projects">PROJECTS</a>
+      <a href="#services" data-tab="services">SERVICES</a>
+      <a href="#association" data-tab="association">ASSOCIATION</a>
+    </nav>
   </div>
 </header>
 
