@@ -1,33 +1,70 @@
 /********************************************
+ * DESIGN TOKENS — light (default) and dark
+ ********************************************/
+:root {
+  --bg: #fbfbf9;            /* warm paper white */
+  --surface: #ffffff;
+  --surface-2: #f3f5f8;     /* panels: bibtex / abstract */
+  --text: #0f172a;          /* near-black slate for strong contrast */
+  --muted: #3f4a59;
+  --border: #dde1e6;
+  --accent: #154a8f;        /* academic navy */
+  --accent-hover: #0f3460;
+  --accent-soft: #e8eef7;
+  --highlight: #9a2f0c;     /* author name, emphasis */
+  --alert: #b42318;         /* "coming soon" etc. */
+  --nav-bg: rgba(255, 255, 255, 0.92);
+
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --mono: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.dark-mode {
+  --bg: #11151a;
+  --surface: #171c22;
+  --surface-2: #1d232b;
+  --text: #e4e7eb;
+  --muted: #9aa5b1;
+  --border: #2a313a;
+  --accent: #7fb0ff;
+  --accent-hover: #b3d0ff;
+  --accent-soft: #1e2a3b;
+  --highlight: #f0a271;
+  --alert: #ff8a80;
+  --nav-bg: rgba(17, 21, 26, 0.92);
+}
+
+/********************************************
  * GLOBAL BODY + TYPOGRAPHY
  ********************************************/
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* anchors land below the fixed nav */
 }
 
 body {
-  font-weight: 400;
   margin: 0 auto 20px auto;
+  padding: 72px 4% 10px 4%; /* top: space for fixed nav */
+  max-width: 1040px;
 
-  padding: 10px;
-  padding-left: 4%;
-  padding-right: 4%;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 1.55rem;
+  line-height: 1.65;
 
-  max-width: 1100px;
-
-  font-size: 1.5em;
-  font-family: "Open sans", Arial, sans-serif;
-  color: #222;
-
-  /* space for fixed nav */
-  padding-top: 60px;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 @media (max-width: 768px) {
   body {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 70px; /* slightly more for wrapped nav */
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 70px;
   }
 }
 
@@ -36,46 +73,106 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-weight: 300;
+  color: var(--text);
 }
 
-h1 { font-size: 3.0rem; line-height: 1.2; letter-spacing: -.1rem; }
-h2 { font-size: 2.6rem; line-height: 1.25; letter-spacing: -.1rem; }
-h3 { font-size: 2.4rem; line-height: 1.3; letter-spacing: -.1rem; }
-h4 { font-size: 2.2rem; line-height: 1.35; letter-spacing: -.08rem; }
-h5 { font-size: 2.0rem; line-height: 1.5; letter-spacing: -.05rem; }
+h1 {
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+h2 { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; line-height: 1.25; }
+h3 { font-family: var(--serif); font-size: 2.3rem; font-weight: 600; line-height: 1.3; }
+
+/* Section titles (About Me, Publications, ...) */
+h4 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+h4 a, h4 a:link, h4 a:visited { color: inherit; }
+
+/* Sub-section titles (Journal Papers, Conference Papers, ...) */
+h5 {
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 2.6rem;
+}
+
 h6 { font-size: 1.5rem; line-height: 1.6; }
 
 p { margin-top: 0; }
 
-/* original link style (kept; overridden later by new section) */
-a:link { color: #0C21CD; text-decoration: none; }
-a:visited { color: #061BCC; text-decoration: none; }
-a:active { color: #CC21CD; }
-a.myclass:hover { color: #157E9D; }
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0 1rem 0;
+}
+
+ul { padding-left: 2.2rem; }
+li { margin-bottom: 0.4rem; }
+li::marker { color: var(--muted); }
+
+b, strong { font-weight: 600; }
 
 td, th {
   vertical-align: top;
   font-size: 1.5rem;
 }
 
+.text-justify { text-align: justify; hyphens: auto; }
+
 @media (max-width: 1000px) {
   .container {
     padding-left: 10px !important;
     padding-right: 10px !important;
-    max-width: 1100px;
+    max-width: 1040px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
+/* Legacy <font color> tags: map them onto the palette */
+font[color="#664B50"] { color: var(--highlight); }   /* own name in author lists */
+font[color="#E80000"] { color: var(--alert); }
+
 /********************************************
- * BUTTONS
+ * LINKS
+ ********************************************/
+a:link,
+a:visited {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a.myclass:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:active { color: var(--highlight); }
+
+/********************************************
+ * BUTTONS (Pdf / DOI / Bibtex / Abstract ...)
  ********************************************/
 .button {
-  background-color: #65bdde;
-  border-radius: 3px;
-  border: 2px;
+  background-color: var(--accent-soft);
+  border-radius: 4px;
+  border: 1px solid var(--border);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -85,33 +182,81 @@ td, th {
 }
 
 .buttonnew {
-  background-color: #65bdde;
-  border: none;
-  color: white;
-  padding: 2px 4px;
+  display: inline-block;
+  margin: 6px 3px 2px 0;
+  padding: 2px 10px;
+
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  margin: 2px 1px;
+
+  color: var(--accent);
+  background-color: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
   cursor: pointer;
-  border-radius: 5px;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
-.buttonnew:hover { background-color: gray; color: #065499; }
+
+/* Buttons contain <a> and <font color="white">: make them follow the button colour */
+.buttonnew a,
+.buttonnew a:link,
+.buttonnew a:visited,
+.buttonnew font {
+  color: inherit;
+  text-decoration: none;
+}
+
+.buttonnew:hover,
+.buttonnew:focus-visible {
+  background-color: var(--accent);
+  color: var(--surface);
+}
+.buttonnew:hover a { text-decoration: none; }
 
 .button1 {
-  background-color: white;
-  color: black;
-  border: 1px solid #1026DB;
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--accent);
 }
-.button1:hover { background-color: white; color: #065499; }
+.button1:hover { background-color: var(--surface); color: var(--accent-hover); }
+
+/********************************************
+ * EXPANDABLE PANELS (BibTeX / Abstract)
+ ********************************************/
+.content {
+  margin: 8px 0 6px 0;
+  padding: 12px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+
+.content pre {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  line-height: 1.55;
+  white-space: pre;
+  overflow-x: auto;
+}
 
 /********************************************
  * TOP NAVIGATION BAR — FIXED + MOBILE DROPDOWN
  ********************************************/
 .topnav {
-  background-color: black;//#D5DBDB;
+  background-color: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
 
   position: fixed;
@@ -130,15 +275,30 @@ td, th {
 .topnav a {
   float: left;
   display: block;
-  color: black;
   text-align: center;
   padding: 18px 16px; /* ~55–60px total height */
   text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
-.topnav a.active {
-  background-color: black;
-  color: white;
+.topnav a:link,
+.topnav a:visited {
+  color: var(--muted);
+}
+
+.topnav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.topnav a.active,
+.topnav a.active:link,
+.topnav a.active:visited {
+  background-color: var(--accent);
+  color: #ffffff;
+  letter-spacing: 0.04em;
 }
 
 .topnav .icon {
@@ -164,6 +324,7 @@ td, th {
     top: 0;
     left: 0;
     right: 0;
+    background-color: var(--surface);
   }
 
   .topnav.responsive a.icon {
@@ -181,34 +342,48 @@ td, th {
 }
 
 /********************************************
- * HERO SECTION
+ * HERO SECTION — photo | details | Scholar card
  ********************************************/
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 22px;
-  margin-top: 0;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) 290px;
+  column-gap: 28px;
+  row-gap: 18px;
+  align-items: stretch;
+  margin-top: 8px;
 }
 
-.hero-left {
-  flex: 0 0 240px;
-  text-align: left;
-}
+.hero-left { text-align: left; }
 
 .hero-right {
-  flex: 1 1 auto;
-  text-align: left;
+  text-align: center;
+  min-width: 0;
 }
+
+.hero-right h1 { margin: 0 0 0.6rem 0; line-height: 1.15; }
+
+/* affiliation block under the name */
+.hero-right h5 {
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+.hero-right h5 b { color: var(--text); }
 
 /* Profile Photo RESPONSIVE */
 .profile-photo {
-  width: 100%;
-  max-width: 240;
-  height: auto;
+  /* full photo, never cropped: fixed height, natural width */
+  height: 250px;
+  width: auto;
   display: block;
-  border-radius: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.10);
 }
 
 /* Icons */
@@ -216,131 +391,223 @@ td, th {
   margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon-row a {
+  display: inline-flex;
+  padding: 4px;
+  background: #ffffff;           /* logos are drawn for a light background */
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.icon-row a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .icon-row img {
-  height: 35px;
+  height: 26px;
   width: auto;
   display: block;
 }
 
-/* mobile layout: stack + reduce gap below photo */
+/* ---------- Google Scholar "Cited by" card ---------- */
+.hero-stats {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+}
+.hero-stats[hidden] { display: none; }
+.hero-right { align-self: center; }
+.hero-left { align-self: start; }
+
+.gs-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.gs-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+.gs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.15rem;
+}
+.gs-link img {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+}
+
+.gs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+.gs-table th,
+.gs-table td {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  padding: 1px 0;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+}
+.gs-table th { font-weight: 600; color: var(--muted); }
+.gs-table td { color: var(--text); font-variant-numeric: tabular-nums; }
+.gs-table td.gs-label { text-align: left; color: var(--accent); }
+
+/* bar chart: fixed-height plot, bars in px against a rounded max */
+.gs-chart {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.gs-plot {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 56px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  border-bottom: 1px solid var(--muted);
+}
+.gs-grid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--border);
+  pointer-events: none;
+}
+.gs-col {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.gs-bar {
+  width: 72%;
+  background: var(--muted);
+  opacity: 0.7;
+  border-radius: 2px 2px 0 0;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+.gs-col:hover .gs-bar { background: var(--accent); opacity: 1; }
+.gs-val {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.gs-years {
+  display: flex;
+  gap: 6px;
+}
+.gs-years span {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.gs-updated {
+  font-size: 1.05rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Tablet: card moves under the details, next to nothing else */
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+  .profile-photo { height: 200px; }
+  .hero-stats {
+    grid-column: 2;
+    max-width: 420px;
+  }
+  .gs-plot { min-height: 80px; }
+}
+
+/* Phone: single column, photo centred, everything same width */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column;
-    text-align: center;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 14px;
   }
 
-  .hero-left {
-    text-align: center;
+  .hero-left { justify-self: center; }
+
+  .profile-photo { height: auto; width: 100%; max-width: 340px; }
+
+  .hero-right h1 { font-size: 2.8rem; text-align: center; }
+
+  .hero-stats {
+    grid-column: 1;
+    max-width: none;
   }
 
-  .profile-photo {
-    max-width: 240px;
-    margin: 0 5;
-  }
-
-  .hero-right {
-    text-align: left;
-    width: 100%;
-  }
-
-  /* kill big white gap under the image */
-  .hero-right h1 {
-    margin-top: 0.4rem;
-  }
-
-  .icon-row {
-    justify-content: left;
-  }
-
-  .icon-row img {
-    height: 30px;
-  }
+  .icon-row img { height: 24px; }
 }
 
 @media (max-width: 480px) {
-  .profile-photo { max-width: 240px; }
-  .icon-row img { height: 15px; }
+  .icon-row img { height: 22px; }
 }
 
-
-/* ------------------------- */
-/*   Default LIGHT theme     */
-/* ------------------------- */
-:root {
-  --bg: #ffffff;
-  --text: #222222;
+/********************************************
+ * MULTI-COLUMN LISTS (reviewer / TPC)
+ ********************************************/
+.multi-column {
+  columns: 2 320px;
+  column-gap: 32px;
 }
+.multi-column li { break-inside: avoid; }
+.multi-column br { display: none; }
 
-/* DARK theme */
-.dark-mode {
-  --bg: #111111;
-  --text: #e1e1e1;
-}
-
-/* apply theme colours */
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Simple button style */
+/********************************************
+ * THEME TOGGLE
+ ********************************************/
 .theme-btn {
-  float: right;
-  //padding: 2px 2px;
-  //font-size: rem;
-  border: .5px solid var(--text);
-  border-radius: 5px;
-  cursor: pointer;
-  background: gray;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1001;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 1.8rem;
+  line-height: 40px;
+
+  background: var(--surface);
   color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.12);
+  cursor: pointer;
 }
-
-/* ------------------------- */
-/*       LINK COLORS         */
-/* ------------------------- */
-
-/* Light mode (default) – global + nav */
-a:link,
-.topnav a:link {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-a:visited,
-.topnav a:visited {
-  color: #551A8B;
-  text-decoration: none;
-}
-
-a:hover,
-.topnav a:hover {
-  color: #003399;
-}
-
-a:active,
-.topnav a:active {
-  color: #ff6600;
-}
-
-/* Dark mode overrides – higher specificity so it works on mobile/nav */
-body.dark-mode a,
-body.dark-mode a:link,
-body.dark-mode a:visited,
-body.dark-mode .topnav a {
-  color: #66aaff !important;
-  text-decoration: none;
-}
-
-body.dark-mode a:hover,
-body.dark-mode .topnav a:hover {
-  color: #cce6ff !important;
-}
-
-body.dark-mode a:active,
-body.dark-mode .topnav a:active {
-  color: #ffaa33 !important;
-}
+.theme-btn:hover { border-color: var(--accent); }
