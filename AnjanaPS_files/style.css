@@ -743,20 +743,61 @@ a:active { color: var(--highlight); }
   padding-top: 1.6rem;
 }
 
-/* Experience tab */
+/* Experience tab: vertical timeline, dates in the left gutter */
+.xp {
+  --xp-gutter: 150px;   /* width of the date column + rail */
+  --xp-rail: 128px;     /* x-position of the timeline line */
+  --xp-dot-top: 22px;
+  position: relative;
+  padding: 14px 0 18px var(--xp-gutter);
+  border-bottom: 0;
+}
+/* the rail */
+.xp::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--xp-rail) - 1px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.xp:first-of-type::before { top: var(--xp-dot-top); }
+.xp:last-of-type::before { bottom: auto; height: var(--xp-dot-top); }
+/* the marker */
+.xp::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--xp-rail) - 7px);
+  top: calc(var(--xp-dot-top) - 7px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+}
+.xp.xp-current::after {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
 .xp-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
+  display: block;
 }
 .xp-date {
-  flex: none;
-  font-size: 1.35rem;
+  position: absolute;
+  left: 0;
+  top: calc(var(--xp-dot-top) - 0.95rem);
+  width: calc(var(--xp-rail) - 18px);
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 1.3rem;
   font-weight: 600;
+  line-height: 1.4;
   color: var(--muted);
-  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
+.xp-date span { white-space: nowrap; }
+.xp.xp-current .xp-date { color: var(--accent); }
 .xp-label {
   font-size: 1.3rem;
   font-weight: 600;
@@ -766,8 +807,17 @@ a:active { color: var(--highlight); }
   margin: 1.6rem 0 0.4rem 0;
 }
 @media (max-width: 600px) {
-  .xp-head { flex-direction: column; gap: 0; }
-  .xp-date { margin-bottom: 0.4rem; }
+  .xp {
+    --xp-gutter: 26px;
+    --xp-rail: 7px;
+  }
+  .xp-head { display: flex; flex-direction: column-reverse; }
+  .xp-date {
+    position: static;
+    width: auto;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
 }
 
 /* Services: TPC / reviewer lists */
